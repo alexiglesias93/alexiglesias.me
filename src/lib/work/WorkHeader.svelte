@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { getElementOffset } from '$lib/utils/helpers';
+  import { onMount } from 'svelte';
 
-  // Types
+  /** Types */
   type FilterElement = HTMLButtonElement;
 
-  // Variables
+  /** Variables */
   let filtersWrapper: HTMLDivElement;
   let filtersPin: HTMLDivElement;
 
@@ -21,7 +21,11 @@
     { element: undefined, label: 'All', active: true },
   ];
 
-  // Functions
+  /** Functions */
+  /**
+   * Handles click events on the filter buttons
+   * @param clickedFilterIndex The index of the clicked button
+   */
   const handleFilterClick = (clickedFilterIndex: number) => {
     filters = filters.map((filter, index) => {
       filter.active = index === clickedFilterIndex;
@@ -29,10 +33,18 @@
     });
   };
 
+  /**
+   * Sets the pin's opacity to 1. Intended to run once after the pin has correctly positioned after onMount.
+   * @param event The transition event
+   */
   const handlePinTransitionEnd = ({ propertyName }: TransitionEvent) => {
     if (propertyName === 'left') filterPinProps.opacity = 1;
   };
 
+  /**
+   * Aligns the pin on top of the target filter
+   * @param target The target filter
+   */
   const setPinLeftPosition = (target: FilterElement) => {
     const wrapperOffset = getElementOffset(filtersWrapper, 'left');
     const filterOffset = getElementOffset(target, 'left');
@@ -41,21 +53,34 @@
     filterPinProps.left = filterOffset + filterWidth / 2 - wrapperOffset;
   };
 
+  /**
+   * Aligns the pin on top of the active filter
+   */
   const restorePinLeftPosition = () => {
     const { element } = filters.find(({ active }) => active);
     setPinLeftPosition(element);
   };
 
+  /**
+   * Moves the pin on top of the hovered filter
+   * @param event Mouse enter event
+   */
   const handleFilterMouseEnter = ({ currentTarget }: Event) => {
     clearTimeout(restorePinPositionTimeout);
     setPinLeftPosition(currentTarget as FilterElement);
   };
 
+  /**
+   * Restores the pin position after a specified timeout
+   */
   const handleFilterMouseLeave = () => {
     restorePinPositionTimeout = setTimeout(restorePinLeftPosition, 200);
   };
 
-  // Lifecycle
+  /** Lifecycle */
+  /**
+   * On Mount
+   */
   onMount(restorePinLeftPosition);
 </script>
 

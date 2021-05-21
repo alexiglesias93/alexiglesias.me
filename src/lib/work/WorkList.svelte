@@ -2,7 +2,7 @@
   import WorkRow from './WorkRow.svelte';
   import { getElementOffset } from '$lib/utils/helpers';
 
-  // Variables
+  /** Variables */
   let wrapper: HTMLDivElement;
   let highlightProps = {
     top: 0,
@@ -49,7 +49,11 @@
     },
   ];
 
-  // Functions
+  /** Functions */
+  /**
+   * Handles the mouseenter event on a WorkRow.
+   * @param event The custom event object
+   */
   const handleRowHover = ({ detail: { rowHeight, rowOffset } }: WorkRow['$$events_def']['mouseover']) => {
     const wrapperOffset = getElementOffset(wrapper, 'top');
 
@@ -57,6 +61,10 @@
     highlightProps.height = rowHeight;
     highlightProps.opacity = 1;
   };
+
+  /**
+   * Handles the mouseleave event on a WorkRow.
+   */
   const handleRowUnhover = () => {
     highlightProps.opacity = 0;
   };

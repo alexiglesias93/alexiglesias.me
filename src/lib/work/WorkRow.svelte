@@ -2,7 +2,7 @@
   import { getElementOffset } from '$lib/utils/helpers';
   import { createEventDispatcher } from 'svelte';
 
-  // Props
+  /** Props */
   export let title: string;
   export let url: string;
   export let team: Array<{
@@ -10,15 +10,24 @@
     image: string;
   }> = [];
 
-  // Variables
+  /** Variables */
   let wrapper: HTMLAnchorElement;
 
-  // Functions
+  /** Custom Events */
   const dispatchMouseEnter = createEventDispatcher<{ mouseenter: { rowHeight: number; rowOffset: number } }>();
   const dispatchMouseLeave = createEventDispatcher<{ mouseleave: undefined }>();
+
+  /** Functions */
+  /**
+   * Handles a mouseenter event of the row
+   */
   const handleMouseEnter = () => {
     dispatchMouseEnter('mouseenter', { rowHeight: wrapper.offsetHeight, rowOffset: getElementOffset(wrapper, 'top') });
   };
+
+  /**
+   * Handles a mouseleave event of the row
+   */
   const handleMouseLeave = () => {
     dispatchMouseLeave('mouseleave');
   };
