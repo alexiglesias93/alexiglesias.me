@@ -1,0 +1,106 @@
+<script lang="ts">
+  import LinkedInIcon from '$lib/icons/LinkedInIcon.svelte';
+  import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
+  import GitHubIcon from '$lib/icons/GitHubIcon.svelte';
+  import { page } from '$app/stores';
+</script>
+
+<header class="wrapper">
+  <div class="page-padding">
+    <div class="container">
+      <div class="content">
+        <a href="/" aria-current={$page.path === '/' ? 'page' : undefined} class="logo">
+          <span class="logo-a">A</span>I
+        </a>
+
+        <nav class="links">
+          <a aria-label="GitHub" rel="noopener" href="https://github.com/alexiglesias93" target="_blank" class="link">
+            <div class="icon">
+              <GitHubIcon />
+            </div>
+          </a>
+          <a
+            aria-label="Twitter"
+            rel="noopener"
+            href="https://twitter.com/alexiglesias_me"
+            target="_blank"
+            class="link"
+          >
+            <div class="icon">
+              <TwitterIcon />
+            </div>
+          </a>
+          <a
+            aria-label="LinkedIn"
+            rel="noopener"
+            href="https://www.linkedin.com/in/alexiglesias93/"
+            target="_blank"
+            class="link"
+          >
+            <div class="icon">
+              <LinkedInIcon />
+            </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  .wrapper {
+    padding-top: 8rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    transition: color 200ms ease;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    &:hover {
+      color: var(--golden);
+
+      .logo-a {
+        color: var(--white);
+      }
+    }
+  }
+
+  .logo-a {
+    transition: color 200ms ease;
+    color: var(--golden);
+  }
+
+  .links {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    grid-column-gap: 1rem;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .link {
+    transition: color 200ms ease;
+    max-width: 100%;
+    display: inline-block;
+
+    &:hover {
+      color: var(--golden);
+    }
+  }
+
+  .icon {
+    display: flex;
+    width: 1rem;
+    flex-direction: column;
+  }
+</style>

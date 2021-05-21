@@ -146,7 +146,7 @@ a {
   grid-template-rows: auto;
 }
 
-.work-list__logo {
+.work-list__avatar {
   width: 1.5rem;
   border-radius: 999px;
 }
@@ -220,11 +220,11 @@ a {
   -webkit-transform: translate(-50%, 0px);
   -ms-transform: translate(-50%, 0px);
   transform: translate(-50%, 0px);
-  -webkit-transition: left 200ms cubic-bezier(.165, .84, .44, 1);
-  transition: left 200ms cubic-bezier(.165, .84, .44, 1);
+  -webkit-transition: left 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: left 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.work-list {
+.work-list__wrapper {
   position: relative;
 }
 
