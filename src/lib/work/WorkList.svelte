@@ -1,6 +1,7 @@
 <script lang="ts">
   import WorkRow from './WorkRow.svelte';
   import { getElementOffset } from '$lib/utils/helpers';
+  import { send, receive } from '$transitions/pages-crossfade';
 
   /** Variables */
   let wrapper: HTMLDivElement;
@@ -13,7 +14,7 @@
   const rows: WorkRow['$$prop_def'][] = [
     {
       title: 'Manitoba Blue Cross',
-      url: '/',
+      url: '/work/test',
       team: [
         { name: 'Alex Iglesias', image: 'images/alex-iglesias.jpg' },
         { name: 'Alex Dram', image: 'images/alex-dram.jpg' },
@@ -54,7 +55,7 @@
    * Handles the mouseenter event on a WorkRow.
    * @param event The custom event object
    */
-  const handleRowHover = ({ detail: { rowHeight, rowOffset } }: WorkRow['$$events_def']['mouseover']) => {
+  const handleRowHover = ({ detail: { rowHeight, rowOffset } }: WorkRow['$$events_def']['mouseenter']) => {
     const wrapperOffset = getElementOffset(wrapper, 'top');
 
     highlightProps.top = rowOffset - wrapperOffset;
@@ -76,6 +77,8 @@
   {/each}
 
   <div
+    in:receive={{ key: 'work-bg' }}
+    out:send={{ key: 'work-bg' }}
     class="highlight"
     style="top: {highlightProps.top}px; height: {highlightProps.height}px; opacity: {highlightProps.opacity};"
   />
@@ -92,7 +95,7 @@
     left: -1rem;
     z-index: -1;
     border-radius: 0.5rem;
-    background-color: var(--gray);
+    background-color: var(--grey);
     will-change: opacity, height, top;
     transition: opacity 200ms ease, height 200ms ease, top 200ms ease;
   }

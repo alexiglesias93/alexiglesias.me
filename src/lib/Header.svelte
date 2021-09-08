@@ -1,54 +1,44 @@
 <script lang="ts">
-  import LinkedInIcon from '$lib/icons/LinkedInIcon.svelte';
-  import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
-  import GitHubIcon from '$lib/icons/GitHubIcon.svelte';
   import { page } from '$app/stores';
+  import Icon from './icons/Icon.svelte';
 </script>
 
-<header class="wrapper">
-  <div class="page-padding">
-    <div class="container">
-      <div class="content">
-        <a href="/" aria-current={$page.path === '/' ? 'page' : undefined} class="logo">
-          <span class="logo-a">A</span>I
-        </a>
+<header class="page-padding">
+  <div class="container">
+    <div class="content">
+      <a href="/" aria-current={$page.path === '/' ? 'page' : undefined} class="logo">
+        <span class="logo-a">A</span>I
+      </a>
 
-        <nav class="links">
-          <a aria-label="GitHub" rel="noopener" href="https://github.com/alexiglesias93" target="_blank" class="link">
-            <div class="icon">
-              <GitHubIcon />
-            </div>
-          </a>
-          <a
-            aria-label="Twitter"
-            rel="noopener"
-            href="https://twitter.com/alexiglesias_me"
-            target="_blank"
-            class="link"
-          >
-            <div class="icon">
-              <TwitterIcon />
-            </div>
-          </a>
-          <a
-            aria-label="LinkedIn"
-            rel="noopener"
-            href="https://www.linkedin.com/in/alexiglesias93/"
-            target="_blank"
-            class="link"
-          >
-            <div class="icon">
-              <LinkedInIcon />
-            </div>
-          </a>
-        </nav>
-      </div>
+      <nav class="links">
+        <a aria-label="GitHub" rel="noopener" href="https://github.com/alexiglesias93" target="_blank" class="link">
+          <div class="icon">
+            <Icon icon="github" />
+          </div>
+        </a>
+        <a aria-label="Twitter" rel="noopener" href="https://twitter.com/alexiglesias_me" target="_blank" class="link">
+          <div class="icon">
+            <Icon icon="twitter" />
+          </div>
+        </a>
+        <a
+          aria-label="LinkedIn"
+          rel="noopener"
+          href="https://www.linkedin.com/in/alexiglesias93/"
+          target="_blank"
+          class="link"
+        >
+          <div class="icon">
+            <Icon icon="linkedin" />
+          </div>
+        </a>
+      </nav>
     </div>
   </div>
 </header>
 
 <style lang="scss">
-  .wrapper {
+  header {
     padding-top: 8rem;
   }
 
@@ -99,8 +89,6 @@
   }
 
   .icon {
-    display: flex;
     width: 1rem;
-    flex-direction: column;
   }
 </style>

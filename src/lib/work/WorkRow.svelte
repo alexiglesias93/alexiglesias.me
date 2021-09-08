@@ -14,22 +14,22 @@
   let wrapper: HTMLAnchorElement;
 
   /** Custom Events */
-  const dispatchMouseEnter = createEventDispatcher<{ mouseenter: { rowHeight: number; rowOffset: number } }>();
-  const dispatchMouseLeave = createEventDispatcher<{ mouseleave: undefined }>();
+  const dispatch =
+    createEventDispatcher<{ mouseenter: { rowHeight: number; rowOffset: number }; mouseleave: undefined }>();
 
   /** Functions */
   /**
    * Handles a mouseenter event of the row
    */
   const handleMouseEnter = () => {
-    dispatchMouseEnter('mouseenter', { rowHeight: wrapper.offsetHeight, rowOffset: getElementOffset(wrapper, 'top') });
+    dispatch('mouseenter', { rowHeight: wrapper.offsetHeight, rowOffset: getElementOffset(wrapper, 'top') });
   };
 
   /**
    * Handles a mouseleave event of the row
    */
   const handleMouseLeave = () => {
-    dispatchMouseLeave('mouseleave');
+    dispatch('mouseleave');
   };
 </script>
 

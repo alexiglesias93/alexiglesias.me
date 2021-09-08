@@ -101,6 +101,7 @@
     {/each}
 
     <div
+      aria-hidden="true"
       class="filters-pin"
       style="opacity: {filterPinProps.opacity}; left: {filterPinProps.left}px;"
       bind:this={filtersPin}

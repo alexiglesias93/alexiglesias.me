@@ -1,5 +1,4 @@
 <script lang="ts">
-  /** Props */
   export let title: string;
   export let description: string;
   export let image = '/images/open-graph.jpg';

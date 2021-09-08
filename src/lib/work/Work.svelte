@@ -3,11 +3,9 @@
   import WorkList from './WorkList.svelte';
 </script>
 
-<section class="section">
-  <div class="page-padding">
-    <div class="container">
-      <WorkHeader />
-      <WorkList />
-    </div>
+<section class="section page-padding">
+  <div class="container">
+    <WorkHeader />
+    <WorkList />
   </div>
 </section>
