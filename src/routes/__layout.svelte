@@ -10,4 +10,8 @@
 
 <style lang="scss" global>
   @import 'app.scss';
+
+  main {
+    position: relative;
+  }
 </style>

@@ -1,9 +1,9 @@
 import { crossfade } from 'svelte/transition';
-import { quartOut } from 'svelte/easing';
+import { quartIn } from 'svelte/easing';
 
 const [send, receive] = crossfade({
   duration: 400,
-  easing: quartOut,
+  easing: quartIn,
 });
 
 export { send, receive };
