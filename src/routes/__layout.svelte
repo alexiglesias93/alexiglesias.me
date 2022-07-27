@@ -1,17 +1,13 @@
 <script lang="ts">
-  import Header from '$lib/Header.svelte';
+	import Header from '$lib/Header.svelte';
 </script>
 
 <Header />
 
 <main>
-  <slot />
+	<slot />
 </main>
 
 <style lang="scss" global>
-  @import 'app.scss';
-
-  main {
-    position: relative;
-  }
+	@import 'app.scss';
 </style>
