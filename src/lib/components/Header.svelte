@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Icon from './icons/Icon.svelte';
+	import GitHubIcon from '$lib/icons/GitHubIcon.svelte';
+	import LinkedinIcon from '$lib/icons/LinkedinIcon.svelte';
+	import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
 </script>
 
 <header class="page-padding">
@@ -19,7 +21,7 @@
 					class="link"
 				>
 					<div class="icon">
-						<Icon icon="github" />
+						<GitHubIcon />
 					</div>
 				</a>
 				<a
@@ -30,7 +32,7 @@
 					class="link"
 				>
 					<div class="icon">
-						<Icon icon="twitter" />
+						<TwitterIcon />
 					</div>
 				</a>
 				<a
@@ -41,7 +43,7 @@
 					class="link"
 				>
 					<div class="icon">
-						<Icon icon="linkedin" />
+						<LinkedinIcon />
 					</div>
 				</a>
 			</nav>

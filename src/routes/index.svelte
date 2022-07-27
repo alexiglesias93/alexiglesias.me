@@ -10,9 +10,9 @@
 </script>
 
 <script lang="ts">
-	import Metas from '$lib/Metas.svelte';
-	import Writing from '$lib/writing/Writing.svelte';
-	import HomeHero from '$lib/HomeHero.svelte';
+	import Metas from '$lib/components/Metas.svelte';
+	import Writing from '$lib/components/writing/Writing.svelte';
+	import HomeHero from '$lib/components/HomeHero.svelte';
 
 	import type { Document } from '@prismicio/client/types/documents';
 
