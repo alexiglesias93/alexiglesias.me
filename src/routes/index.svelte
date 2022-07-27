@@ -11,7 +11,7 @@
 
 <script lang="ts">
 	import Metas from '$lib/Metas.svelte';
-	import Work from '$lib/work/Work.svelte';
+	import Writing from '$lib/writing/Writing.svelte';
 	import HomeHero from '$lib/HomeHero.svelte';
 
 	import type { Document } from '@prismicio/client/types/documents';
@@ -27,7 +27,7 @@
 
 	<HomeHero />
 
-	<Work />
+	<Writing />
 
 	{JSON.stringify(work, null, '\t')}
 </div>

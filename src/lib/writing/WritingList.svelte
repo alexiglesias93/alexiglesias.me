@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WorkRow from './WorkRow.svelte';
+	import WritingRow from './WritingRow.svelte';
 	import { getElementOffset } from '$lib/utils/helpers';
 
 	/** Variables */
@@ -10,42 +10,26 @@
 		opacity: 0
 	};
 
-	const rows: WorkRow['$$prop_def'][] = [
+	const rows: WritingRow['$$prop_def'][] = [
 		{
-			title: 'Manitoba Blue Cross',
+			title: 'Gutting Webflow - Checkboxes',
 			url: '/',
-			team: [
-				{ name: 'Alex Iglesias', image: 'images/alex-iglesias.jpg' },
-				{ name: 'Alex Dram', image: 'images/alex-dram.jpg' },
-				{ name: 'Finsweet', image: 'images/fs-webclip.png' }
-			]
+			date: 'July 01, 2022'
 		},
 		{
-			title: 'Manitoba Blue Cross',
+			title: "Hey ho, let's go!",
 			url: '/',
-			team: [
-				{ name: 'Alex Iglesias', image: 'images/alex-iglesias.jpg' },
-				{ name: 'Alex Dram', image: 'images/alex-dram.jpg' },
-				{ name: 'Finsweet', image: 'images/fs-webclip.png' }
-			]
+			date: 'June 25, 2022'
 		},
 		{
-			title: 'Manitoba Blue Cross',
+			title: 'Gutting Webflow - Checkboxes',
 			url: '/',
-			team: [
-				{ name: 'Alex Iglesias', image: 'images/alex-iglesias.jpg' },
-				{ name: 'Alex Dram', image: 'images/alex-dram.jpg' },
-				{ name: 'Finsweet', image: 'images/fs-webclip.png' }
-			]
+			date: 'July 01, 2022'
 		},
 		{
-			title: 'Manitoba Blue Cross',
+			title: "Hey ho, let's go!",
 			url: '/',
-			team: [
-				{ name: 'Alex Iglesias', image: 'images/alex-iglesias.jpg' },
-				{ name: 'Alex Dram', image: 'images/alex-dram.jpg' },
-				{ name: 'Finsweet', image: 'images/fs-webclip.png' }
-			]
+			date: 'June 25, 2022'
 		}
 	];
 
@@ -56,7 +40,7 @@
 	 */
 	const handleRowHover = ({
 		detail: { rowHeight, rowOffset }
-	}: WorkRow['$$events_def']['mouseenter']) => {
+	}: WritingRow['$$events_def']['mouseenter']) => {
 		const wrapperOffset = getElementOffset(wrapper, 'top');
 
 		highlightProps.top = rowOffset - wrapperOffset;
@@ -74,7 +58,7 @@
 
 <div class="wrapper" bind:this={wrapper}>
 	{#each rows as row}
-		<WorkRow {...row} on:mouseenter={handleRowHover} on:mouseleave={handleRowUnhover} />
+		<WritingRow {...row} on:mouseenter={handleRowHover} on:mouseleave={handleRowUnhover} />
 	{/each}
 
 	<div
