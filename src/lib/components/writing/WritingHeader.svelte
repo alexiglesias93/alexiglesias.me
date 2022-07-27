@@ -1,114 +1,69 @@
 <script lang="ts">
-	import { getElementOffset } from '$lib/utils/helpers';
-	import { onMount } from 'svelte';
+	import { send, receive } from '$lib/transitions/item-crossfade';
 
-	/** Types */
-	type FilterElement = HTMLButtonElement;
+	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 
-	/** Variables */
-	let filtersWrapper: HTMLDivElement;
-	let filtersPin: HTMLDivElement;
+	interface Filter {
+		label: string;
+		active: boolean;
+	}
 
-	let restorePinPositionTimeout: NodeJS.Timeout;
-	let filterPinProps = {
-		opacity: 0,
-		left: 0
-	};
-
-	let filters: { element?: FilterElement; label: string; active: boolean }[] = [
-		{ element: undefined, label: 'Websites', active: false },
-		{ element: undefined, label: 'Products', active: false },
-		{ element: undefined, label: 'All', active: true }
+	let filters: Filter[] = [
+		{ label: 'Websites', active: false },
+		{ label: 'Products', active: false },
+		{ label: 'All', active: true }
 	];
 
-	/** Functions */
-	/**
-	 * Handles click events on the filter buttons
-	 * @param clickedFilterIndex The index of the clicked button
-	 */
-	const handleFilterClick = (clickedFilterIndex: number) => {
-		filters = filters.map((filter, index) => {
-			filter.active = index === clickedFilterIndex;
+	let activePinTimeout: NodeJS.Timeout;
+	$: activePin = filters.find(({ active }) => active)?.label;
+
+	const handleFilterClick = ({ label }: Filter) => {
+		filters = filters.map((filter) => {
+			filter.active = filter.label === label;
 			return filter;
 		});
 	};
 
-	/**
-	 * Sets the pin's opacity to 1. Intended to run once after the pin has correctly positioned after onMount.
-	 * @param event The transition event
-	 */
-	const handlePinTransitionEnd = ({ propertyName }: TransitionEvent) => {
-		if (propertyName === 'left') filterPinProps.opacity = 1;
+	const handleFilterMouseEnter = ({ label }: Filter) => {
+		clearTimeout(activePinTimeout);
+		activePin = label;
 	};
 
-	/**
-	 * Aligns the pin on top of the target filter
-	 * @param target The target filter
-	 */
-	const setPinLeftPosition = (target: FilterElement) => {
-		const wrapperOffset = getElementOffset(filtersWrapper, 'left');
-		const filterOffset = getElementOffset(target, 'left');
-		const filterWidth = target.offsetWidth;
-
-		filterPinProps.left = filterOffset + filterWidth / 2 - wrapperOffset;
-	};
-
-	/**
-	 * Aligns the pin on top of the active filter
-	 */
-	const restorePinLeftPosition = () => {
-		const { element } = filters.find(({ active }) => active) || {};
-		if (!element) return;
-
-		setPinLeftPosition(element);
-	};
-
-	/**
-	 * Moves the pin on top of the hovered filter
-	 * @param event Mouse enter event
-	 */
-	const handleFilterMouseEnter = ({ currentTarget }: Event) => {
-		clearTimeout(restorePinPositionTimeout);
-		setPinLeftPosition(currentTarget as FilterElement);
-	};
-
-	/**
-	 * Restores the pin position after a specified timeout
-	 */
 	const handleFilterMouseLeave = () => {
-		restorePinPositionTimeout = setTimeout(restorePinLeftPosition, 200);
+		activePinTimeout = setTimeout(() => {
+			activePin = filters.find(({ active }) => active)?.label;
+		}, 200);
 	};
-
-	/** Lifecycle */
-	/**
-	 * On Mount
-	 */
-	onMount(restorePinLeftPosition);
 </script>
 
 <div class="wrapper">
-	<h2 class="m-0">Work</h2>
-	<div class="filters" bind:this={filtersWrapper}>
-		{#each filters as { label, active, element }, index}
+	<h2>Writing</h2>
+
+	<div class="filters">
+		{#each filters as filter (filter.label)}
 			<button
 				class="filter"
-				class:is-active={active}
-				bind:this={element}
-				on:click={() => handleFilterClick(index)}
-				on:mouseenter={handleFilterMouseEnter}
+				class:is-active={filter.active}
+				on:click={() => handleFilterClick(filter)}
+				on:mouseenter={() => handleFilterMouseEnter(filter)}
+				on:focus={() => handleFilterMouseEnter(filter)}
 				on:mouseleave={handleFilterMouseLeave}
-				on:focus={handleFilterMouseEnter}
-				on:blur={handleFilterMouseLeave}>{label}</button
+				on:blur={handleFilterMouseLeave}
 			>
-		{/each}
+				<span>
+					{filter.label}
+				</span>
 
-		<div
-			aria-hidden="true"
-			class="filters-pin"
-			style="opacity: {filterPinProps.opacity}; left: {filterPinProps.left}px;"
-			bind:this={filtersPin}
-			on:transitionend|once={handlePinTransitionEnd}
-		/>
+				{#if activePin === filter.label}
+					<span
+						aria-hidden="true"
+						class="filter-pin"
+						in:send={{ key: PIN_CROSSFADE_KEY }}
+						out:receive={{ key: PIN_CROSSFADE_KEY }}
+					/>
+				{/if}
+			</button>
+		{/each}
 	</div>
 </div>
 
@@ -129,6 +84,7 @@
 
 	.filter {
 		display: block;
+		position: relative;
 		color: var(--white);
 		transition: color 200ms ease;
 		padding: 0.25rem 0.5rem 0.25rem 0.5rem;
@@ -139,14 +95,14 @@
 		}
 	}
 
-	.filters-pin {
+	.filter-pin {
 		position: absolute;
 		top: -0.25rem;
+		left: 50%;
 		width: 0.25rem;
 		height: 0.25rem;
 		border-radius: 999px;
 		background-color: var(--golden);
-		transform: translate(-50%, -100%);
-		transition: opacity 200ms ease, left 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		transform: translateX(50%);
 	}
 </style>

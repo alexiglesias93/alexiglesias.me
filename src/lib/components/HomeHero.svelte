@@ -19,7 +19,7 @@
 			>.<br />
 		</p>
 
-		<p class="m-0">
+		<p>
 			Currently rocking as CTO of
 			<a
 				href="https://www.finsweet.com/"

@@ -15,6 +15,7 @@
 	import HomeHero from '$lib/components/HomeHero.svelte';
 
 	import type { Document } from '@prismicio/client/types/documents';
+	import Work from '$lib/components/work/Work.svelte';
 
 	export let work: Document[];
 </script>
@@ -26,6 +27,8 @@
 	/>
 
 	<HomeHero />
+
+	<Work />
 
 	<Writing />
 

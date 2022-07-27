@@ -36,6 +36,7 @@
     "dependencies": {
         "@prismicio/client": "^5.1.0",
         "modern-normalize": "^1.1.0",
+        "nanoid": "^4.0.0",
         "prismic-dom": "^2.2.6"
     }
 }

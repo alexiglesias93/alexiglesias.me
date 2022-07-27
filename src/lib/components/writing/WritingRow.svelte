@@ -1,44 +1,31 @@
-<script lang="ts">
-	import { getElementOffset } from '$lib/utils/helpers';
-	import { createEventDispatcher } from 'svelte';
+<script context="module" lang="ts">
+	const CROSSFADE_KEY = 'writing-row-highlight';
+</script>
 
-	/** Props */
+<script lang="ts">
+	import { send, receive } from '$lib/transitions/item-crossfade';
+
+	export let highlighted: string | null;
+	export let id: string;
 	export let title: string;
-	export let url: string;
+	export let href: string;
 	export let date: string;
 
-	/** Variables */
-	let wrapper: HTMLAnchorElement;
+	let hovering = false;
 
-	/** Custom Events */
-	const dispatch = createEventDispatcher<{
-		mouseenter: { rowHeight: number; rowOffset: number };
-		mouseleave: undefined;
-	}>();
-
-	/** Functions */
-	/**
-	 * Handles a mouseenter event of the row
-	 */
 	const handleMouseEnter = () => {
-		dispatch('mouseenter', {
-			rowHeight: wrapper.offsetHeight,
-			rowOffset: getElementOffset(wrapper, 'top')
-		});
+		hovering = true;
+		highlighted = id;
 	};
 
-	/**
-	 * Handles a mouseleave event of the row
-	 */
 	const handleMouseLeave = () => {
-		dispatch('mouseleave');
+		hovering = false;
 	};
 </script>
 
 <a
-	href={url}
+	{href}
 	class="wrapper"
-	bind:this={wrapper}
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
 	on:focus={handleMouseEnter}
@@ -46,19 +33,40 @@
 >
 	<span>{title}</span>
 	<span class="date">{date}</span>
+
+	{#if highlighted === id}
+		<div class="highlight" in:send={{ key: CROSSFADE_KEY }} out:receive={{ key: CROSSFADE_KEY }} />
+	{/if}
 </a>
 
 <style lang="scss">
 	.wrapper {
 		display: flex;
+		position: relative;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		justify-content: space-between;
 		align-items: center;
-		outline: none;
 	}
 
 	.date {
 		font-size: 0.75rem;
+	}
+
+	.highlight {
+		position: absolute;
+		opacity: 0;
+		left: -1rem;
+		top: 0rem;
+		right: -1rem;
+		bottom: 0rem;
+		z-index: -1;
+		border-radius: 0.5rem;
+		background-color: var(--grey);
+		transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	.wrapper:hover .highlight {
+		opacity: 1;
 	}
 </style>
