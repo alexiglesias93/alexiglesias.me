@@ -1,11 +1,11 @@
 <script lang="ts">
-	import WritingRow from './WritingRow.svelte';
+	import WritingItem from './WritingItem.svelte';
 	import { nanoid } from 'nanoid';
 	import type { ComponentProps } from 'svelte';
 
 	let highlighted: string | null = null;
 
-	const rows: Omit<ComponentProps<WritingRow>, 'highlighted'>[] = [
+	const items: Omit<ComponentProps<WritingItem>, 'highlighted'>[] = [
 		{
 			id: nanoid(),
 			title: 'Gutting Webflow - Checkboxes',
@@ -34,7 +34,7 @@
 </script>
 
 <div class="wrapper">
-	{#each rows as row}
-		<WritingRow {...row} bind:highlighted />
+	{#each items as item}
+		<WritingItem {...item} bind:highlighted />
 	{/each}
 </div>
