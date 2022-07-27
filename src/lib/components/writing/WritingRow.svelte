@@ -11,26 +11,12 @@
 	export let href: string;
 	export let date: string;
 
-	let hovering = false;
-
 	const handleMouseEnter = () => {
-		hovering = true;
 		highlighted = id;
-	};
-
-	const handleMouseLeave = () => {
-		hovering = false;
 	};
 </script>
 
-<a
-	{href}
-	class="wrapper"
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
-	on:focus={handleMouseEnter}
-	on:blur={handleMouseLeave}
->
+<a {href} class="wrapper" on:mouseenter={handleMouseEnter} on:focus={handleMouseEnter}>
 	<span>{title}</span>
 	<span class="date">{date}</span>
 

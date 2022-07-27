@@ -4,7 +4,7 @@
 
 <section class="section page-padding">
 	<div class="container">
-		<h2 class="mb-8">Work</h2>
+		<h2 class="mb-12">Work</h2>
 		<WorkList />
 	</div>
 </section>

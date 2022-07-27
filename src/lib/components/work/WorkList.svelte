@@ -11,40 +11,40 @@
 			id: nanoid(),
 			title: 'Finsweet Extension',
 			description: 'A badass workflow toolkit for Webflow.',
-			href: '/',
-			image: 'images/finsweet-extension-placeholder.png',
+			href: 'https://www.finsweet.com/extension',
+			image: 'images/finsweet-extension.png',
 			tags: ['svelte', 'extension', 'typescript', 'webflow']
+		},
+		{
+			id: nanoid(),
+			title: 'Attributes',
+			description: 'No-code Attributes solutions for Webflow.',
+			href: 'https://www.finsweet.com/attributes',
+			image: 'images/attributes.png',
+			tags: ['typescript', 'webflow']
+		},
+		{
+			id: nanoid(),
+			title: 'Cookie Consent',
+			description: 'Incredibly powerful cookie consent plugin for Webflow.',
+			href: 'https://www.finsweet.com/cookie-consent/',
+			image: 'images/cookie-consent.png',
+			tags: ['typescript', 'webflow']
+		},
+		{
+			id: nanoid(),
+			title: 'Cookie Consent',
+			description: 'Incredibly powerful cookie consent plugin for Webflow.',
+			href: 'https://www.finsweet.com/cookie-consent/',
+			image: 'images/cookie-consent.png',
+			tags: ['typescript', 'webflow']
 		},
 		{
 			id: nanoid(),
 			title: 'Finsweet Extension',
 			description: 'A badass workflow toolkit for Webflow.',
-			href: '/',
-			image: 'images/finsweet-extension-placeholder.png',
-			tags: ['svelte', 'extension', 'typescript', 'webflow']
-		},
-		{
-			id: nanoid(),
-			title: 'Finsweet Extension',
-			description: 'A badass workflow toolkit for Webflow.',
-			href: '/',
-			image: 'images/finsweet-extension-placeholder.png',
-			tags: ['svelte', 'extension', 'typescript', 'webflow']
-		},
-		{
-			id: nanoid(),
-			title: 'Finsweet Extension',
-			description: 'A badass workflow toolkit for Webflow.',
-			href: '/',
-			image: 'images/finsweet-extension-placeholder.png',
-			tags: ['svelte', 'extension', 'typescript', 'webflow']
-		},
-		{
-			id: nanoid(),
-			title: 'Finsweet Extension',
-			description: 'A badass workflow toolkit for Webflow.',
-			href: '/',
-			image: 'images/finsweet-extension-placeholder.png',
+			href: 'https://www.finsweet.com/extension',
+			image: 'images/finsweet-extension.png',
 			tags: ['svelte', 'extension', 'typescript', 'webflow']
 		}
 	];

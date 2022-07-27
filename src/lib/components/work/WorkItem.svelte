@@ -16,17 +16,15 @@
 	const handleMouseEnter = () => {
 		highlighted = id;
 	};
-
-	const handleMouseLeave = () => {};
 </script>
 
 <a
 	{href}
 	class="wrapper"
+	target="_blank"
+	rel="noopener"
 	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
 	on:focus={handleMouseEnter}
-	on:blur={handleMouseLeave}
 >
 	<div class="img-wrapper">
 		<img src={image} loading="lazy" alt={title} />
