@@ -32,5 +32,5 @@
 
 	<Writing />
 
-	{JSON.stringify(work, null, '\t')}
+	<!-- {JSON.stringify(work, null, '\t')} -->
 </div>

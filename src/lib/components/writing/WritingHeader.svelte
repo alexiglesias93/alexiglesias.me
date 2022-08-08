@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { send, receive } from '$lib/transitions/item-crossfade';
+	import { slide } from 'svelte/transition';
+	import { quartOut } from 'svelte/easing';
 
 	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 
@@ -9,13 +11,17 @@
 	}
 
 	let filters: Filter[] = [
-		{ label: 'Websites', active: false },
-		{ label: 'Products', active: false },
-		{ label: 'All', active: true }
+		{ label: 'Svelte', active: false },
+		{ label: 'TypeScript', active: false },
+		{ label: 'Webflow', active: false },
+		{ label: 'All Writings', active: true }
 	];
 
 	let activePinTimeout: NodeJS.Timeout;
-	$: activePin = filters.find(({ active }) => active)?.label;
+	let hovering = false;
+
+	$: activeFilter = filters.find(({ active }) => active)!;
+	$: activePin = activeFilter.label;
 
 	const handleFilterClick = ({ label }: Filter) => {
 		filters = filters.map((filter) => {
@@ -25,14 +31,16 @@
 	};
 
 	const handleFilterMouseEnter = ({ label }: Filter) => {
+		hovering = true;
 		clearTimeout(activePinTimeout);
 		activePin = label;
 	};
 
 	const handleFilterMouseLeave = () => {
 		activePinTimeout = setTimeout(() => {
-			activePin = filters.find(({ active }) => active)?.label;
-		}, 200);
+			activePin = activeFilter.label;
+			hovering = false;
+		}, 100);
 	};
 </script>
 
@@ -41,54 +49,67 @@
 
 	<div class="filters">
 		{#each filters as filter (filter.label)}
-			<button
-				class="filter"
-				class:is-active={filter.active}
-				on:click={() => handleFilterClick(filter)}
-				on:mouseenter={() => handleFilterMouseEnter(filter)}
-				on:focus={() => handleFilterMouseEnter(filter)}
-				on:mouseleave={handleFilterMouseLeave}
-				on:blur={handleFilterMouseLeave}
-			>
-				<span>
-					{filter.label}
-				</span>
+			{@const shouldDisplay = activeFilter === filter || hovering}
+			{@const hasActivePin = activePin === filter.label}
 
-				{#if activePin === filter.label}
-					<span
-						aria-hidden="true"
-						class="filter-pin"
-						in:send={{ key: PIN_CROSSFADE_KEY }}
-						out:receive={{ key: PIN_CROSSFADE_KEY }}
-					/>
-				{/if}
-			</button>
+			{#if shouldDisplay}
+				<button
+					class="filter"
+					class:is-active={filter.active}
+					transition:slide={{ duration: 200, easing: quartOut }}
+					on:click={() => handleFilterClick(filter)}
+					on:mouseenter={() => handleFilterMouseEnter(filter)}
+					on:focus={() => handleFilterMouseEnter(filter)}
+					on:mouseleave={handleFilterMouseLeave}
+					on:blur={handleFilterMouseLeave}
+				>
+					{#if hasActivePin}
+						<span
+							aria-hidden="true"
+							class="filter-pin"
+							in:send|local={{ key: PIN_CROSSFADE_KEY }}
+							out:receive|local={{ key: PIN_CROSSFADE_KEY }}
+						/>
+					{/if}
+
+					<span>
+						{filter.label}
+					</span>
+				</button>
+			{/if}
 		{/each}
 	</div>
 </div>
 
 <style>
 	.wrapper {
-		display: flex;
+		position: relative;
 		margin-bottom: 2rem;
-		justify-content: space-between;
-		align-items: center;
 	}
 
 	.filters {
-		position: relative;
+		position: absolute;
+		left: auto;
+		top: auto;
+		right: 0%;
+		bottom: 0%;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
+		text-align: right;
 	}
 
 	.filter {
-		display: block;
+		display: flex;
 		position: relative;
-		color: var(--white);
 		transition: color 200ms ease;
-		padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+		padding: 0.25rem 0rem 0.25rem 0rem;
+		justify-content: flex-end;
+		align-items: center;
+		grid-column-gap: 0.5rem;
 		background-color: unset;
+		color: var(--white);
 	}
 
 	.filter.is-active {
@@ -96,9 +117,6 @@
 	}
 
 	.filter-pin {
-		position: absolute;
-		top: -0.25rem;
-		left: 50%;
 		width: 0.25rem;
 		height: 0.25rem;
 		border-radius: 999px;
