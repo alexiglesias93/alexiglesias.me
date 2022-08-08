@@ -51,7 +51,7 @@
 	</div>
 </header>
 
-<style lang="scss">
+<style>
 	header {
 		padding-top: 8rem;
 	}
@@ -67,14 +67,14 @@
 		color: var(--white);
 		font-size: 1.25rem;
 		font-weight: 700;
+	}
 
-		&:hover {
-			color: var(--golden);
+	.logo:hover {
+		color: var(--golden);
+	}
 
-			.logo-a {
-				color: var(--white);
-			}
-		}
+	.logo:hover .logo-a {
+		color: var(--white);
 	}
 
 	.logo-a {
@@ -96,10 +96,10 @@
 		transition: color 200ms ease;
 		max-width: 100%;
 		display: inline-block;
+	}
 
-		&:hover {
-			color: var(--golden);
-		}
+	.link:hover {
+		color: var(--golden);
 	}
 
 	.icon {

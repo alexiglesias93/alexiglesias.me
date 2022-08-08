@@ -67,7 +67,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style>
 	.wrapper {
 		display: flex;
 		margin-bottom: 2rem;
@@ -89,10 +89,10 @@
 		transition: color 200ms ease;
 		padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 		background-color: unset;
+	}
 
-		&.is-active {
-			color: var(--golden);
-		}
+	.filter.is-active {
+		color: var(--golden);
 	}
 
 	.filter-pin {

@@ -31,30 +31,30 @@
 	</div>
 </section>
 
-<style lang="scss">
+<style>
 	.external-link {
 		font-weight: 700;
 		transition: opacity 200ms ease;
+	}
 
-		&:hover,
-		&:focus {
-			opacity: 0.5;
-		}
+	.external-link:hover,
+	.external-link:focus {
+		opacity: 0.5;
+	}
 
-		&.is-typescript {
-			color: #3178c6;
-		}
+	.external-link.is-typescript {
+		color: #3178c6;
+	}
 
-		&.is-svelte {
-			color: #ff3e00;
-		}
+	.external-link.is-svelte {
+		color: #ff3e00;
+	}
 
-		&.is-webflow {
-			color: #4353ff;
-		}
+	.external-link.is-webflow {
+		color: #4353ff;
+	}
 
-		&.is-finsweet {
-			color: #f7c75f;
-		}
+	.external-link.is-finsweet {
+		color: #f7c75f;
 	}
 </style>

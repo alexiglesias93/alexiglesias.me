@@ -9,10 +9,6 @@ const config = {
 	preprocess: preprocess({
 		postcss: {
 			plugins: [autoprefixer()]
-		},
-		scss: {
-			includePaths: ['src/styles', 'src/styles/mixins'],
-			prependData: `@import 'breakpoints.scss';`
 		}
 	}),
 

@@ -25,7 +25,7 @@
 	{/if}
 </a>
 
-<style lang="scss">
+<style>
 	.wrapper {
 		display: flex;
 		position: relative;
