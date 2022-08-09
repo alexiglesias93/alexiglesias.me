@@ -6,21 +6,25 @@
 	import { send, receive } from '$lib/transitions/item-crossfade';
 
 	export let highlighted: string | null;
-	export let id: string;
+	export let slug: string;
 	export let title: string;
-	export let href: string;
 	export let date: string;
 
 	const handleMouseEnter = () => {
-		highlighted = id;
+		highlighted = slug;
 	};
 </script>
 
-<a {href} class="wrapper" on:mouseenter={handleMouseEnter} on:focus={handleMouseEnter}>
+<a
+	href="/writing/{slug}"
+	class="wrapper"
+	on:mouseenter={handleMouseEnter}
+	on:focus={handleMouseEnter}
+>
 	<span>{title}</span>
 	<span class="date">{date}</span>
 
-	{#if highlighted === id}
+	{#if highlighted === slug}
 		<div class="highlight" in:send={{ key: CROSSFADE_KEY }} out:receive={{ key: CROSSFADE_KEY }} />
 	{/if}
 </a>

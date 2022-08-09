@@ -1,36 +1,10 @@
 <script lang="ts">
 	import WritingItem from './WritingItem.svelte';
-	import { nanoid } from 'nanoid';
 	import type { ComponentProps } from 'svelte';
 
-	let highlighted: string | null = null;
+	export let items: Omit<ComponentProps<WritingItem>, 'highlighted'>[] = [];
 
-	const items: Omit<ComponentProps<WritingItem>, 'highlighted'>[] = [
-		{
-			id: nanoid(),
-			title: 'Gutting Webflow - Checkboxes',
-			href: '/',
-			date: 'July 01, 2022'
-		},
-		{
-			id: nanoid(),
-			title: "Hey ho, let's go!",
-			href: '/',
-			date: 'June 25, 2022'
-		},
-		{
-			id: nanoid(),
-			title: 'Gutting Webflow - Checkboxes',
-			href: '/',
-			date: 'July 01, 2022'
-		},
-		{
-			id: nanoid(),
-			title: "Hey ho, let's go!",
-			href: '/',
-			date: 'June 25, 2022'
-		}
-	];
+	let highlighted: string | null = null;
 </script>
 
 <div class="wrapper">
