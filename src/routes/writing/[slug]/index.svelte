@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WritingAuthor from '$lib/components/writing/WritingAuthor.svelte';
+	import WritingHeader from '$lib/components/writing/WritingHeader.svelte';
 	import { AUTHORS } from '$lib/data/authors';
 	import { WRITINGS } from '$lib/data/writings';
 
@@ -14,18 +14,7 @@
 
 <section class="section page-padding">
 	<div class="container">
-		<div class="writing-header__wrapper">
-			<h1 class="mb-12">{title}</h1>
-
-			<p class="text-lg mb-16">
-				{subtitle}
-			</p>
-
-			<div class="writing-meta__wrapper">
-				<WritingAuthor {author_data} />
-				<p class="writing-meta__date">Last Updated:<br />{date}</p>
-			</div>
-		</div>
+		<WritingHeader {title} {subtitle} {date} author={author_data} />
 
 		<div class="rtb">
 			<svelte:component this={module.default} />

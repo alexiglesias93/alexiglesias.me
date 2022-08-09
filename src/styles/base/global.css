@@ -29,6 +29,21 @@
 	flex-direction: column;
 }
 
+.rtb h2 {
+	margin-top: 4rem;
+	margin-bottom: 1.5rem;
+}
+
+.rtb h3 {
+	margin-top: 3rem;
+	margin-bottom: 1.25rem;
+}
+
+.rtb h4 {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 479px) {
 	.page-padding {
 		padding-right: 1.5rem;

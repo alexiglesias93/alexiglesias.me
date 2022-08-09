@@ -12,7 +12,7 @@
 			title: 'Finsweet Extension',
 			description: 'A badass workflow toolkit for Webflow.',
 			href: 'https://www.finsweet.com/extension',
-			image: 'images/finsweet-extension.png',
+			image: 'images/work/finsweet-extension.png',
 			tags: ['svelte', 'extension', 'typescript', 'webflow']
 		},
 		{
@@ -20,7 +20,7 @@
 			title: 'Attributes',
 			description: 'No-code Attributes solutions for Webflow.',
 			href: 'https://www.finsweet.com/attributes',
-			image: 'images/attributes.png',
+			image: 'images/work/attributes.png',
 			tags: ['typescript', 'webflow']
 		},
 		{
@@ -28,7 +28,7 @@
 			title: 'Cookie Consent',
 			description: 'Incredibly powerful cookie consent plugin for Webflow.',
 			href: 'https://www.finsweet.com/cookie-consent/',
-			image: 'images/cookie-consent.png',
+			image: 'images/work/cookie-consent.png',
 			tags: ['typescript', 'webflow']
 		},
 		{
@@ -36,7 +36,7 @@
 			title: 'Cookie Consent',
 			description: 'Incredibly powerful cookie consent plugin for Webflow.',
 			href: 'https://www.finsweet.com/cookie-consent/',
-			image: 'images/cookie-consent.png',
+			image: 'images/work/cookie-consent.png',
 			tags: ['typescript', 'webflow']
 		},
 		{
@@ -44,7 +44,7 @@
 			title: 'Finsweet Extension',
 			description: 'A badass workflow toolkit for Webflow.',
 			href: 'https://www.finsweet.com/extension',
-			image: 'images/finsweet-extension.png',
+			image: 'images/work/finsweet-extension.png',
 			tags: ['svelte', 'extension', 'typescript', 'webflow']
 		}
 	];

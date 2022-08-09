@@ -1,6 +1,6 @@
 ---
-title: Post One
-subtitle: Test
+title: Gutting Webflow - Everything about checkboxes
+subtitle: Webflow does some magic in the background when dealing with checkboxes. Let's uncover it.
 author: alex
 date: 'August 9th, 2022'
 ---

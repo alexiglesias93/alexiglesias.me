@@ -1,18 +1,33 @@
 <script lang="ts">
-	import type { AUTHORS } from '$lib/data/authors';
+	import type { Author } from '$lib/data/authors';
 
-	export let author_data: typeof AUTHORS[keyof typeof AUTHORS];
+	export let author: Author;
 </script>
 
-<div class="writing-author__wrapper">
-	<img src={author_data.img} loading="lazy" alt={author_data.name} class="writing-author__img" />
+<div class="wrapper">
+	<img src={author.img} loading="lazy" alt={author.name} />
 	<div>
-		<div>{author_data.name}</div>
-		<a
-			rel="noopener"
-			href="https://twitter.com/{author_data.twitter}"
-			target="_blank"
-			class="writing-author__a">@{author_data.twitter}</a
-		>
+		<div>{author.name}</div>
+		<a rel="noopener" href="https://twitter.com/{author.twitter}" target="_blank">
+			@{author.twitter}
+		</a>
 	</div>
 </div>
+
+<style>
+	.wrapper {
+		display: flex;
+		align-items: center;
+		grid-column-gap: 0.5rem;
+	}
+
+	img {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 999rem;
+	}
+	a {
+		color: var(--golden);
+		font-size: 0.75rem;
+	}
+</style>

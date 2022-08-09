@@ -1,57 +1,65 @@
 body {
-  background-color: var(--black);
-  font-family: var(--font-family);
-  color: var(--white-smoke);
-  font-size: 0.875rem;
-  line-height: 1.5;
+	background-color: var(--black);
+	font-family: var(--font-family);
+	color: var(--white-smoke);
+	font-size: 0.875rem;
+	line-height: 1.5;
 }
 
 h1 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  color: var(--white);
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 700;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	color: var(--white);
+	font-size: 3rem;
+	line-height: 1.25;
+	font-weight: 700;
 }
 
 h2 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  color: var(--white);
-  font-size: 1.75rem;
-  line-height: 1.2;
-  font-weight: 700;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	color: var(--white);
+	font-size: 1.75rem;
+	line-height: 1.2;
+	font-weight: 700;
 }
 
 h3 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  color: var(--white);
-  font-size: 1.125rem;
-  line-height: 1.25;
-  font-weight: 700;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	color: var(--white);
+	font-size: 1.125rem;
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+h4 {
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	font-size: 1rem;
+	line-height: 1.3333333333333333;
+	font-weight: 700;
 }
 
 p {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
 }
 
 a {
-  display: inline-block;
-  color: var(--white);
-  text-decoration: none;
+	display: inline-block;
+	color: var(--white);
+	text-decoration: none;
 }
 
 img {
-  display: inline-block;
-  max-width: 100%;
-  object-fit: cover;
+	display: inline-block;
+	max-width: 100%;
+	object-fit: cover;
 }
 
 button {
-  cursor: pointer;
-  border: 0;
-  outline: 0;
+	cursor: pointer;
+	border: 0;
+	outline: 0;
 }
