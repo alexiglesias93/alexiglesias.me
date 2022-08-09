@@ -37,9 +37,11 @@
 		padding-bottom: 1rem;
 		justify-content: space-between;
 		align-items: center;
+		grid-column-gap: 1rem;
 	}
 
 	.date {
+		flex: 0 0 auto;
 		font-size: 0.75rem;
 	}
 
