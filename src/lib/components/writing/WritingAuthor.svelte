@@ -29,5 +29,10 @@
 	a {
 		color: var(--golden);
 		font-size: 0.75rem;
+		transition: opacity 200ms ease;
+	}
+
+	a:hover {
+		opacity: 75%;
 	}
 </style>
