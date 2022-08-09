@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { send, receive } from '$lib/transitions/item-crossfade';
-	import { slide } from 'svelte/transition';
 	import { quartOut } from 'svelte/easing';
+	import { falide } from '$lib/transitions/falide';
 
 	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 
@@ -56,7 +56,7 @@
 				<button
 					class="filter"
 					class:is-active={filter.active}
-					transition:slide={{ duration: 200, easing: quartOut }}
+					transition:falide={{ easing: quartOut }}
 					on:click={() => handle_filter_click(filter)}
 					on:mouseenter={() => handle_filter_mouse_enter(filter)}
 					on:focus={() => handle_filter_mouse_enter(filter)}
