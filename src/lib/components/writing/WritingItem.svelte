@@ -10,7 +10,7 @@
 	export let title: string;
 	export let date: string;
 
-	const handleMouseEnter = () => {
+	const handle_mouse_enter = () => {
 		highlighted = slug;
 	};
 </script>
@@ -18,8 +18,8 @@
 <a
 	href="/writing/{slug}"
 	class="wrapper"
-	on:mouseenter={handleMouseEnter}
-	on:focus={handleMouseEnter}
+	on:mouseenter={handle_mouse_enter}
+	on:focus={handle_mouse_enter}
 >
 	<span>{title}</span>
 	<span class="date">{date}</span>

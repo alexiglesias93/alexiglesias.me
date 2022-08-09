@@ -13,7 +13,7 @@
 	export let description: string;
 	export let tags: string[];
 
-	const handleMouseEnter = () => {
+	const handle_mouse_enter = () => {
 		highlighted = id;
 	};
 </script>
@@ -23,8 +23,8 @@
 	class="wrapper"
 	target="_blank"
 	rel="noopener"
-	on:mouseenter={handleMouseEnter}
-	on:focus={handleMouseEnter}
+	on:mouseenter={handle_mouse_enter}
+	on:focus={handle_mouse_enter}
 >
 	<div class="img-wrapper">
 		<img src={image} loading="lazy" alt={title} />

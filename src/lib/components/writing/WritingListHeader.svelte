@@ -17,28 +17,28 @@
 		{ label: 'All Writings', active: true }
 	];
 
-	let activePinTimeout: NodeJS.Timeout;
+	let active_pin_timeout: NodeJS.Timeout;
 	let hovering = false;
 
-	$: activeFilter = filters.find(({ active }) => active)!;
-	$: activePin = activeFilter.label;
+	$: active_filter = filters.find(({ active }) => active)!;
+	$: active_pin = active_filter.label;
 
-	const handleFilterClick = ({ label }: Filter) => {
+	const handle_filter_click = ({ label }: Filter) => {
 		filters = filters.map((filter) => {
 			filter.active = filter.label === label;
 			return filter;
 		});
 	};
 
-	const handleFilterMouseEnter = ({ label }: Filter) => {
+	const handle_filter_mouse_enter = ({ label }: Filter) => {
 		hovering = true;
-		clearTimeout(activePinTimeout);
-		activePin = label;
+		clearTimeout(active_pin_timeout);
+		active_pin = label;
 	};
 
-	const handleFilterMouseLeave = () => {
-		activePinTimeout = setTimeout(() => {
-			activePin = activeFilter.label;
+	const handle_filter_mouse_leave = () => {
+		active_pin_timeout = setTimeout(() => {
+			active_pin = active_filter.label;
 			hovering = false;
 		}, 100);
 	};
@@ -49,21 +49,21 @@
 
 	<div class="filters">
 		{#each filters as filter (filter.label)}
-			{@const shouldDisplay = activeFilter === filter || hovering}
-			{@const hasActivePin = activePin === filter.label}
+			{@const should_display = active_filter === filter || hovering}
+			{@const has_active_pin = active_pin === filter.label}
 
-			{#if shouldDisplay}
+			{#if should_display}
 				<button
 					class="filter"
 					class:is-active={filter.active}
 					transition:slide={{ duration: 200, easing: quartOut }}
-					on:click={() => handleFilterClick(filter)}
-					on:mouseenter={() => handleFilterMouseEnter(filter)}
-					on:focus={() => handleFilterMouseEnter(filter)}
-					on:mouseleave={handleFilterMouseLeave}
-					on:blur={handleFilterMouseLeave}
+					on:click={() => handle_filter_click(filter)}
+					on:mouseenter={() => handle_filter_mouse_enter(filter)}
+					on:focus={() => handle_filter_mouse_enter(filter)}
+					on:mouseleave={handle_filter_mouse_leave}
+					on:blur={handle_filter_mouse_leave}
 				>
-					{#if hasActivePin}
+					{#if has_active_pin}
 						<span
 							aria-hidden="true"
 							class="filter-pin"
