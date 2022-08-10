@@ -11,6 +11,7 @@
 	export let date: string;
 
 	const handle_mouse_enter = () => {
+		console.log('mouse enter');
 		highlighted = slug;
 	};
 </script>
@@ -38,6 +39,7 @@
 		justify-content: space-between;
 		align-items: center;
 		grid-column-gap: 1rem;
+		outline: none;
 	}
 
 	.date {
@@ -58,7 +60,8 @@
 		transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 	}
 
-	.wrapper:hover .highlight {
+	.wrapper:hover .highlight,
+	.wrapper:focus .highlight {
 		opacity: 1;
 	}
 </style>

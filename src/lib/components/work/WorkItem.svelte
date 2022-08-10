@@ -50,6 +50,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		outline: none;
 	}
 
 	.highlight {
@@ -65,7 +66,8 @@
 		transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 	}
 
-	.wrapper:hover .highlight {
+	.wrapper:hover .highlight,
+	.wrapper:focus .highlight {
 		opacity: 1;
 	}
 

@@ -2,12 +2,14 @@
 	import { send, receive } from '$lib/transitions/item-crossfade';
 	import { quartOut } from 'svelte/easing';
 	import { falide } from '$lib/transitions/falide';
+	import { tick } from 'svelte';
 
 	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 
 	interface Filter {
 		label: string;
 		active: boolean;
+		element?: HTMLElement;
 	}
 
 	let filters: Filter[] = [
@@ -23,7 +25,11 @@
 	$: active_filter = filters.find(({ active }) => active)!;
 	$: active_pin = active_filter.label;
 
-	const handle_filter_click = ({ label }: Filter) => {
+	const handle_filter_click = (filter: Filter) => {
+		const { label } = filter;
+
+		hovering = true;
+
 		filters = filters.map((filter) => {
 			filter.active = filter.label === label;
 			return filter;
@@ -42,6 +48,32 @@
 			hovering = false;
 		}, 100);
 	};
+
+	const handle_filter_keydown = async (e: KeyboardEvent, { label }: Filter) => {
+		const is_esc = e.key === 'Escape';
+		const is_arrow_up = e.key === 'ArrowUp';
+		const is_arrow_down = e.key === 'ArrowDown';
+		if (!is_esc && !is_arrow_up && !is_arrow_down) return;
+
+		e.preventDefault();
+
+		if (is_esc) {
+			active_filter.element?.focus();
+			handle_filter_mouse_leave();
+			return;
+		}
+
+		hovering = true;
+
+		const index = filters.findIndex((filter) => filter.label === label);
+		const next_index = is_arrow_up
+			? Math.max(index - 1, 0)
+			: Math.min(index + 1, filters.length - 1);
+
+		const next_filter = filters[next_index];
+
+		tick().then(() => next_filter.element?.focus());
+	};
 </script>
 
 <div class="wrapper">
@@ -51,17 +83,21 @@
 		{#each filters as filter (filter.label)}
 			{@const should_display = active_filter === filter || hovering}
 			{@const has_active_pin = active_pin === filter.label}
+			{@const tabindex = has_active_pin ? 0 : -1}
 
 			{#if should_display}
 				<button
 					class="filter"
 					class:is-active={filter.active}
+					{tabindex}
+					bind:this={filter.element}
 					transition:falide={{ easing: quartOut }}
 					on:click={() => handle_filter_click(filter)}
 					on:mouseenter={() => handle_filter_mouse_enter(filter)}
 					on:focus={() => handle_filter_mouse_enter(filter)}
 					on:mouseleave={handle_filter_mouse_leave}
 					on:blur={handle_filter_mouse_leave}
+					on:keydown={(e) => handle_filter_keydown(e, filter)}
 				>
 					{#if has_active_pin}
 						<span
