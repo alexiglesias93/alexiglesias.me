@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: var(--black);
 	font-family: var(--font-family);
@@ -62,4 +66,14 @@ button {
 	cursor: pointer;
 	border: 0;
 	outline: 0;
+}
+
+figure {
+	margin: 1.5rem 0rem;
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	text-align: center;
+	font-size: 0.75rem;
 }

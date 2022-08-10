@@ -3,20 +3,22 @@
 	import { quartOut } from 'svelte/easing';
 	import { send, receive } from '$lib/transitions/item-crossfade';
 	import { falide } from '$lib/transitions/falide';
+	import { active_writing_filter_tag } from './stores';
 
 	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 
+	export let tags: string[];
+
 	interface Filter {
 		label: string;
+		tag: string | null;
 		active: boolean;
 		element?: HTMLElement;
 	}
 
 	let filters: Filter[] = [
-		{ label: 'Svelte', active: false },
-		{ label: 'TypeScript', active: false },
-		{ label: 'Webflow', active: false },
-		{ label: 'All Writings', active: true }
+		...tags.map((tag) => ({ tag, label: tag, active: false })),
+		{ tag: null, label: 'All Writings', active: true }
 	];
 
 	let active_pin_timeout: NodeJS.Timeout;
@@ -24,6 +26,7 @@
 
 	$: active_filter = filters.find(({ active }) => active)!;
 	$: active_pin = active_filter.label;
+	$: $active_writing_filter_tag = active_filter.tag;
 
 	const handle_filter_click = (filter: Filter) => {
 		const { label } = filter;
@@ -91,7 +94,7 @@
 					class:is-active={filter.active}
 					{tabindex}
 					bind:this={filter.element}
-					transition:falide={{ easing: quartOut }}
+					transition:falide|local={{ easing: quartOut }}
 					on:click={() => handle_filter_click(filter)}
 					on:mouseenter={() => handle_filter_mouse_enter(filter)}
 					on:focus={() => handle_filter_mouse_enter(filter)}

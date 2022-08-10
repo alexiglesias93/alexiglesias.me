@@ -2,6 +2,22 @@
 	--font-family: Inter, sans-serif;
 }
 
+html {
+	font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+}
+
+@media screen and (max-width: 1920px) {
+	html {
+		font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+	}
+}
+
+@media screen and (max-width: 360px) {
+	html {
+		font-size: calc(0.7493036211699164rem + 1.1142061281337046vw);
+	}
+}
+
 @font-face {
 	font-family: 'Inter';
 	src: url('/fonts/Inter-Medium.woff2') format('woff2'),

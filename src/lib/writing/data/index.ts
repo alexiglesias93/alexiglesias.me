@@ -10,15 +10,17 @@ export const AUTHORS = {
 	}
 };
 
+export interface WritingMetaData {
+	title: string;
+	subtitle: string;
+	author: keyof typeof AUTHORS;
+	date: string;
+	tags: string[];
+}
+
 interface WritingData {
 	default: SvelteComponent;
-	metadata: {
-		title: string;
-		subtitle: string;
-		author: keyof typeof AUTHORS;
-		date: string;
-		tags: string[];
-	};
+	metadata: WritingMetaData;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -31,5 +33,3 @@ export const WRITINGS = Object.entries(glob_import).map(([path, module]) => {
 		slug: convert_path_to_slug(path)
 	};
 });
-
-console.log({ WRITINGS });

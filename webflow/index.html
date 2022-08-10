@@ -1,183 +1,380 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Tue Aug 09 2022 19:52:19 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html>
+<!--  This site was created in Webflow. https://www.webflow.com  -->
+<!--  Last Published: Wed Aug 10 2022 08:42:13 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="60a150c067e8ec2b69a58764" data-wf-site="60a150c067e8ec1e0fa58763" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Alex Iglesias</title>
-  <meta content="Developing cool s**t for the no-code community. CTO @ Finsweet." name="description">
-  <meta content="Alex Iglesias" property="og:title">
-  <meta content="Developing cool s**t for the no-code community. CTO @ Finsweet." property="og:description">
-  <meta content="https://uploads-ssl.webflow.com/60a150c067e8ec1e0fa58763/60a282620cf8215b3513568e_open-graph.jpg" property="og:image">
-  <meta content="Alex Iglesias" property="twitter:title">
-  <meta content="Developing cool s**t for the no-code community. CTO @ Finsweet." property="twitter:description">
-  <meta content="https://uploads-ssl.webflow.com/60a150c067e8ec1e0fa58763/60a282620cf8215b3513568e_open-graph.jpg" property="twitter:image">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/alexiglesias.webflow.css" rel="stylesheet" type="text/css">
-  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
-</head>
-<body>
-  <div class="hidden w-embed">
-    <style>
-  .logo:hover .logo__a {
-    color: #ffffff;
-  }
-  .work-item__wrapper:hover .work-item__highlight {
-    opacity: 1;
-  }
-  .writing-row__wrapper:hover .writing-row__highlight {
-    opacity: 1;
-  }
-</style>
-  </div>
-  <header class="header__header page-padding">
-    <div class="container">
-      <div class="header__content">
-        <a href="index.html" aria-current="page" class="header__logo w--current"><span class="header__logo-a">A</span>I</a>
-        <nav class="header__links">
-          <a rel="noopener" aria-label="GitHub" href="https://github.com/alexiglesias93" target="_blank" class="header__link w-inline-block">
-            <div class="icon header__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewbox="0 0 496 512">
-                <defs>
-                <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
-              </defs></svg></div>
-          </a>
-          <a rel="noopener" aria-label="Twitter" href="https://twitter.com/alexiglesias_me" target="_blank" class="header__link w-inline-block">
-            <div class="icon header__icon w-embed"><svg viewbox="0 0 512 416" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M459.37 103.716C459.695 108.264 459.695 112.813 459.695 117.361C459.695 256.081 354.112 415.919 161.137 415.919C101.685 415.919 46.457 398.7 0 368.813C8.447 369.787 16.568 370.112 25.34 370.112C74.395 370.112 119.553 353.544 155.614 325.28C109.482 324.305 70.822 294.092 57.502 252.508C64 253.482 70.497 254.132 77.32 254.132C86.741 254.132 96.163 252.832 104.934 250.559C56.853 240.812 20.791 198.579 20.791 147.574V146.275C34.76 154.072 51.005 158.945 68.222 159.594C39.958 140.751 21.441 108.589 21.441 72.203C21.441 52.711 26.638 34.843 35.735 19.249C87.39 82.924 165.035 124.507 252.1 129.056C250.476 121.259 249.501 113.138 249.501 105.016C249.501 47.188 296.283 0.0820312 354.435 0.0820312C384.648 0.0820312 411.937 12.752 431.105 33.219C454.82 28.671 477.561 19.899 497.704 7.87903C489.906 32.245 473.338 52.712 451.572 65.706C472.689 63.433 493.156 57.584 511.998 49.463C497.706 70.254 479.837 88.771 459.37 103.716V103.716Z"></path>
-              </svg></div>
-          </a>
-          <a rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/in/alexiglesias93/" target="_blank" class="header__link w-inline-block">
-            <div class="icon header__icon w-embed"><svg viewbox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M416 0H31.9C14.3 0 0 14.5 0 32.3V415.7C0 433.5 14.3 448 31.9 448H416C433.6 448 448 433.5 448 415.7V32.3C448 14.5 433.6 0 416 0ZM135.4 384H69V170.2H135.5V384H135.4ZM102.2 141C80.9 141 63.7 123.7 63.7 102.5C63.7 81.3 80.9 64 102.2 64C123.4 64 140.7 81.3 140.7 102.5C140.7 123.8 123.5 141 102.2 141V141ZM384.3 384H317.9V280C317.9 255.2 317.4 223.3 283.4 223.3C248.8 223.3 243.5 250.3 243.5 278.2V384H177.1V170.2H240.8V199.4H241.7C250.6 182.6 272.3 164.9 304.6 164.9C371.8 164.9 384.3 209.2 384.3 266.8V384V384Z" fill="currentColor"></path>
-              </svg></div>
-          </a>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="section page-padding">
-      <div class="container">
-        <h1 class="mb-8">Hello there,</h1>
-        <p class="mb-4">I&#x27;m Alex Iglesias, a mechanical engineer who fell in love with web development.<br>I enjoy working with modern languages and tools like <a href="https://www.typescriptlang.org/" rel="noopener" target="_blank" class="external-link is-typescript">Typescript</a>, <a href="https://svelte.dev/" rel="noopener" target="_blank" class="external-link is-svelte">Svelte</a> and <a href="https://webflow.com/" rel="noopener" target="_blank" class="external-link is-webflow">Webflow</a>.<br></p>
-        <p>Currently rocking as CTO of <a href="https://www.finsweet.com/" rel="noopener" target="_blank" class="external-link is-finsweet">Finsweet </a> 💪</p>
-      </div>
-    </section>
-    <section class="section page-padding">
-      <div class="container">
-        <h2 class="mb-12">Work</h2>
-        <div class="work-list__wrapper">
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_1.png" loading="lazy" srcset="images/slack-imgs_1-p-500.png 500w, images/slack-imgs_1-p-800.png 800w, images/slack-imgs_1.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Finsweet Extension</h3>
-            <p class="mb-4">A badass workflow toolkit for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">svelte</div>
-              <div class="work-item__tag">extension</div>
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs.png" loading="lazy" srcset="images/slack-imgs-p-500.png 500w, images/slack-imgs-p-800.png 800w, images/slack-imgs-p-1080.png 1080w, images/slack-imgs.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Attributes</h3>
-            <p class="mb-4">No-code Attributes solutions for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_2.png" loading="lazy" srcset="images/slack-imgs_2-p-500.png 500w, images/slack-imgs_2-p-800.png 800w, images/slack-imgs_2-p-1080.png 1080w, images/slack-imgs_2.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Cookie Consent</h3>
-            <p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_2.png" loading="lazy" srcset="images/slack-imgs_2-p-500.png 500w, images/slack-imgs_2-p-800.png 800w, images/slack-imgs_2-p-1080.png 1080w, images/slack-imgs_2.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Cookie Consent</h3>
-            <p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_1.png" loading="lazy" srcset="images/slack-imgs_1-p-500.png 500w, images/slack-imgs_1-p-800.png 800w, images/slack-imgs_1.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Finsweet Extension</h3>
-            <p class="mb-4">A badass workflow toolkit for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">svelte</div>
-              <div class="work-item__tag">extension</div>
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs.png" loading="lazy" srcset="images/slack-imgs-p-500.png 500w, images/slack-imgs-p-800.png 800w, images/slack-imgs-p-1080.png 1080w, images/slack-imgs.png 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px" alt="" class="work-item__img"></div>
-            <h3 class="mb-2">Attributes</h3>
-            <p class="mb-4">No-code Attributes solutions for Webflow.</p>
-            <div class="work-item__tags">
-              <div class="work-item__tag">typescript</div>
-              <div class="work-item__tag">webflow</div>
-            </div>
-            <div class="work-item__highlight"></div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="section page-padding">
-      <div class="container">
-        <div class="writing-list-header__wrapper">
-          <h2>Writing</h2>
-          <div class="writing-list-header__filters">
-            <div class="writing-list-header__filter">
-              <div>Webflow</div>
-            </div>
-            <div class="writing-list-header__filter">
-              <div>Typescript</div>
-            </div>
-            <div class="writing-list-header__filter">
-              <div>Svelte</div>
-            </div>
-            <div class="writing-list-header__filter is-active">
-              <div aria-hidden="true" class="writing-list-header__filter-pin"></div>
-              <div>All writings</div>
-            </div>
-          </div>
-        </div>
-        <div class="writing-list__wrapper">
-          <a href="#" class="writing-item__wrapper w-inline-block">
-            <div>Gutting Webflow - Everything about checkboxes</div>
-            <div class="writing-item__date">July 01, 2022</div>
-            <div class="writing-item__highlight"></div>
-          </a>
-          <a href="#" class="writing-item__wrapper w-inline-block">
-            <div>Hey ho, let&#x27;s go!</div>
-            <div class="writing-item__date">June 25, 2022</div>
-            <div class="writing-item__highlight"></div>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60a150c067e8ec1e0fa58763" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
-  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<title>Alex Iglesias</title>
+		<meta
+			content="Developing cool s**t for the no-code community. CTO @ Finsweet."
+			name="description"
+		/>
+		<meta content="Alex Iglesias" property="og:title" />
+		<meta
+			content="Developing cool s**t for the no-code community. CTO @ Finsweet."
+			property="og:description"
+		/>
+		<meta
+			content="https://uploads-ssl.webflow.com/60a150c067e8ec1e0fa58763/60a282620cf8215b3513568e_open-graph.jpg"
+			property="og:image"
+		/>
+		<meta content="Alex Iglesias" property="twitter:title" />
+		<meta
+			content="Developing cool s**t for the no-code community. CTO @ Finsweet."
+			property="twitter:description"
+		/>
+		<meta
+			content="https://uploads-ssl.webflow.com/60a150c067e8ec1e0fa58763/60a282620cf8215b3513568e_open-graph.jpg"
+			property="twitter:image"
+		/>
+		<meta property="og:type" content="website" />
+		<meta content="summary_large_image" name="twitter:card" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<meta content="Webflow" name="generator" />
+		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="css/webflow.css" rel="stylesheet" type="text/css" />
+		<link href="css/alexiglesias.webflow.css" rel="stylesheet" type="text/css" />
+		<!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+		<script type="text/javascript">
+			!(function (o, c) {
+				var n = c.documentElement,
+					t = ' w-mod-';
+				(n.className += t + 'js'),
+					('ontouchstart' in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
+						(n.className += t + 'touch');
+			})(window, document);
+		</script>
+		<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link href="images/webclip.png" rel="apple-touch-icon" />
+	</head>
+	<body>
+		<style>
+			html {
+				font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+			}
+
+			@media screen and (max-width: 1920px) {
+				html {
+					font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+				}
+			}
+
+			@media screen and (max-width: 360px) {
+				html {
+					font-size: calc(0.7493036211699164rem + 1.1142061281337046vw);
+				}
+			}
+
+			.logo:hover .logo__a {
+				color: #ffffff;
+			}
+
+			.work-item__wrapper:hover .work-item__highlight {
+				opacity: 1;
+			}
+
+			.writing-row__wrapper:hover .writing-row__highlight {
+				opacity: 1;
+			}
+		</style>
+		<header class="header__header page-padding">
+			<div class="container">
+				<div class="header__content">
+					<a href="index.html" aria-current="page" class="header__logo w--current"
+						><span class="header__logo-a">A</span>I</a
+					>
+					<nav class="header__links">
+						<a
+							rel="noopener"
+							aria-label="GitHub"
+							href="https://github.com/alexiglesias93"
+							target="_blank"
+							class="header__link w-inline-block"
+						>
+							<div class="icon header__icon w-embed">
+								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewbox="0 0 496 512">
+									<defs>
+										<path
+											fill="currentColor"
+											d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+										></path>
+									</defs>
+								</svg>
+							</div>
+						</a>
+						<a
+							rel="noopener"
+							aria-label="Twitter"
+							href="https://twitter.com/alexiglesias_me"
+							target="_blank"
+							class="header__link w-inline-block"
+						>
+							<div class="icon header__icon w-embed">
+								<svg viewbox="0 0 512 416" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M459.37 103.716C459.695 108.264 459.695 112.813 459.695 117.361C459.695 256.081 354.112 415.919 161.137 415.919C101.685 415.919 46.457 398.7 0 368.813C8.447 369.787 16.568 370.112 25.34 370.112C74.395 370.112 119.553 353.544 155.614 325.28C109.482 324.305 70.822 294.092 57.502 252.508C64 253.482 70.497 254.132 77.32 254.132C86.741 254.132 96.163 252.832 104.934 250.559C56.853 240.812 20.791 198.579 20.791 147.574V146.275C34.76 154.072 51.005 158.945 68.222 159.594C39.958 140.751 21.441 108.589 21.441 72.203C21.441 52.711 26.638 34.843 35.735 19.249C87.39 82.924 165.035 124.507 252.1 129.056C250.476 121.259 249.501 113.138 249.501 105.016C249.501 47.188 296.283 0.0820312 354.435 0.0820312C384.648 0.0820312 411.937 12.752 431.105 33.219C454.82 28.671 477.561 19.899 497.704 7.87903C489.906 32.245 473.338 52.712 451.572 65.706C472.689 63.433 493.156 57.584 511.998 49.463C497.706 70.254 479.837 88.771 459.37 103.716V103.716Z"
+									></path>
+								</svg>
+							</div>
+						</a>
+						<a
+							rel="noopener"
+							aria-label="LinkedIn"
+							href="https://www.linkedin.com/in/alexiglesias93/"
+							target="_blank"
+							class="header__link w-inline-block"
+						>
+							<div class="icon header__icon w-embed">
+								<svg viewbox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M416 0H31.9C14.3 0 0 14.5 0 32.3V415.7C0 433.5 14.3 448 31.9 448H416C433.6 448 448 433.5 448 415.7V32.3C448 14.5 433.6 0 416 0ZM135.4 384H69V170.2H135.5V384H135.4ZM102.2 141C80.9 141 63.7 123.7 63.7 102.5C63.7 81.3 80.9 64 102.2 64C123.4 64 140.7 81.3 140.7 102.5C140.7 123.8 123.5 141 102.2 141V141ZM384.3 384H317.9V280C317.9 255.2 317.4 223.3 283.4 223.3C248.8 223.3 243.5 250.3 243.5 278.2V384H177.1V170.2H240.8V199.4H241.7C250.6 182.6 272.3 164.9 304.6 164.9C371.8 164.9 384.3 209.2 384.3 266.8V384V384Z"
+										fill="currentColor"
+									></path>
+								</svg>
+							</div>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="section page-padding">
+				<div class="container">
+					<h1 class="mb-8">Hello there,</h1>
+					<p class="mb-4">
+						I&#x27;m Alex Iglesias, a mechanical engineer who fell in love with web development.<br />I
+						enjoy working with modern languages and tools like
+						<a
+							href="https://www.typescriptlang.org/"
+							rel="noopener"
+							target="_blank"
+							class="external-link is-typescript"
+							>Typescript</a
+						>,
+						<a
+							href="https://svelte.dev/"
+							rel="noopener"
+							target="_blank"
+							class="external-link is-svelte"
+							>Svelte</a
+						>
+						and
+						<a
+							href="https://webflow.com/"
+							rel="noopener"
+							target="_blank"
+							class="external-link is-webflow"
+							>Webflow</a
+						>.<br />
+					</p>
+					<p>
+						Currently rocking as CTO of
+						<a
+							href="https://www.finsweet.com/"
+							rel="noopener"
+							target="_blank"
+							class="external-link is-finsweet"
+							>Finsweet
+						</a>
+						💪
+					</p>
+				</div>
+			</section>
+			<section class="section page-padding">
+				<div class="container">
+					<h2 class="mb-12">Work</h2>
+					<div class="work-list__wrapper">
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs_1.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs_1-p-500.png  500w,
+										images/slack-imgs_1-p-800.png  800w,
+										images/slack-imgs_1.png       1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Finsweet Extension</h3>
+							<p class="mb-4">A badass workflow toolkit for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">svelte</div>
+								<div class="work-item__tag">extension</div>
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs-p-500.png   500w,
+										images/slack-imgs-p-800.png   800w,
+										images/slack-imgs-p-1080.png 1080w,
+										images/slack-imgs.png        1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Attributes</h3>
+							<p class="mb-4">No-code Attributes solutions for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs_2.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs_2-p-500.png   500w,
+										images/slack-imgs_2-p-800.png   800w,
+										images/slack-imgs_2-p-1080.png 1080w,
+										images/slack-imgs_2.png        1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Cookie Consent</h3>
+							<p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs_2.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs_2-p-500.png   500w,
+										images/slack-imgs_2-p-800.png   800w,
+										images/slack-imgs_2-p-1080.png 1080w,
+										images/slack-imgs_2.png        1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Cookie Consent</h3>
+							<p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs_1.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs_1-p-500.png  500w,
+										images/slack-imgs_1-p-800.png  800w,
+										images/slack-imgs_1.png       1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Finsweet Extension</h3>
+							<p class="mb-4">A badass workflow toolkit for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">svelte</div>
+								<div class="work-item__tag">extension</div>
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+						<a href="#" class="work-item__wrapper w-inline-block">
+							<div class="work-item__img-wrapper">
+								<img
+									src="images/slack-imgs.png"
+									loading="lazy"
+									srcset="
+										images/slack-imgs-p-500.png   500w,
+										images/slack-imgs-p-800.png   800w,
+										images/slack-imgs-p-1080.png 1080w,
+										images/slack-imgs.png        1200w
+									"
+									sizes="(max-width: 479px) 90vw, (max-width: 767px) 40vw, 192px"
+									alt=""
+									class="work-item__img"
+								/>
+							</div>
+							<h3 class="mb-2">Attributes</h3>
+							<p class="mb-4">No-code Attributes solutions for Webflow.</p>
+							<div class="work-item__tags">
+								<div class="work-item__tag">typescript</div>
+								<div class="work-item__tag">webflow</div>
+							</div>
+							<div class="work-item__highlight"></div>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="section page-padding">
+				<div class="container">
+					<div class="writing-list-header__wrapper">
+						<h2>Writing</h2>
+						<div class="writing-list-header__filters">
+							<div class="writing-list-header__filter">
+								<div>Webflow</div>
+							</div>
+							<div class="writing-list-header__filter">
+								<div>Typescript</div>
+							</div>
+							<div class="writing-list-header__filter">
+								<div>Svelte</div>
+							</div>
+							<div class="writing-list-header__filter is-active">
+								<div aria-hidden="true" class="writing-list-header__filter-pin"></div>
+								<div>All writings</div>
+							</div>
+						</div>
+					</div>
+					<div class="writing-list__wrapper">
+						<a href="#" class="writing-item__wrapper w-inline-block">
+							<div>Gutting Webflow - Everything about checkboxes</div>
+							<div class="writing-item__date">July 01, 2022</div>
+							<div class="writing-item__highlight"></div>
+						</a>
+						<a href="#" class="writing-item__wrapper w-inline-block">
+							<div>Hey ho, let&#x27;s go!</div>
+							<div class="writing-item__date">June 25, 2022</div>
+							<div class="writing-item__highlight"></div>
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script
+			src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60a150c067e8ec1e0fa58763"
+			type="text/javascript"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"
+		></script>
+		<script src="js/webflow.js" type="text/javascript"></script>
+		<!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+	</body>
 </html>

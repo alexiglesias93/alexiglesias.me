@@ -5,5 +5,5 @@
 
 <figure>
 	<img {src} alt={caption} />
-	<figcaption>{caption}</figcaption>
+	<figcaption aria-hidden="true">{caption}</figcaption>
 </figure>
