@@ -11,7 +11,6 @@
 	export let date: string;
 
 	const handle_mouse_enter = () => {
-		console.log('mouse enter');
 		highlighted = slug;
 	};
 </script>

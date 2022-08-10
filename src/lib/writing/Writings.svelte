@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { ComponentProps } from 'svelte';
+
+	import { WRITINGS } from './data';
 	import WritingListHeader from './WritingListHeader.svelte';
 	import WritingList from './WritingList.svelte';
-	import { WRITINGS } from '$lib/data/writings';
-	import type { ComponentProps } from 'svelte';
 
 	const items: ComponentProps<WritingList>['items'] = WRITINGS.map(
 		({

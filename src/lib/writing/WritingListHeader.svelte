@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { send, receive } from '$lib/transitions/item-crossfade';
-	import { quartOut } from 'svelte/easing';
-	import { falide } from '$lib/transitions/falide';
 	import { tick } from 'svelte';
+	import { quartOut } from 'svelte/easing';
+	import { send, receive } from '$lib/transitions/item-crossfade';
+	import { falide } from '$lib/transitions/falide';
 
 	const PIN_CROSSFADE_KEY = 'writing-filter-pin';
 

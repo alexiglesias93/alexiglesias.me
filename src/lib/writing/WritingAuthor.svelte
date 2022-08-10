@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Author } from '$lib/data/authors';
+	import type { Author } from './data';
 
 	export let author: Author;
 </script>

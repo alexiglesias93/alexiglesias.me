@@ -1,8 +1,11 @@
 ---
-title: Hey, ho, let's go
+title: Gutting Webflow - Everything about checkboxes
 subtitle: Webflow does some magic in the background when dealing with checkboxes. Let's uncover it.
 author: alex
-date: 'August 7th, 2022'
+date: '9 Aug 2022'
+tags:
+  - Webflow
+  - TypeScript
 ---
 
 The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.

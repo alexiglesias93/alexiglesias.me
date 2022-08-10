@@ -1,6 +1,6 @@
 <script lang="ts">
-	import WritingItem from './WritingItem.svelte';
 	import type { ComponentProps } from 'svelte';
+	import WritingItem from './WritingItem.svelte';
 
 	export let items: Omit<ComponentProps<WritingItem>, 'highlighted'>[] = [];
 

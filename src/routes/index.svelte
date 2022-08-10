@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Metas from '$lib/components/Metas.svelte';
-	import Writings from '$lib/components/writing/Writings.svelte';
 	import HomeHero from '$lib/components/HomeHero.svelte';
-	import Work from '$lib/components/work/Work.svelte';
+	import Writings from '$lib/writing/Writings.svelte';
+	import Work from '$lib/work/Work.svelte';
 </script>
 
 <Metas

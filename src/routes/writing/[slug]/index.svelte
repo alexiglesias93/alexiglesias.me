@@ -1,7 +1,6 @@
 <script lang="ts">
-	import WritingHeader from '$lib/components/writing/WritingHeader.svelte';
-	import { AUTHORS } from '$lib/data/authors';
-	import { WRITINGS } from '$lib/data/writings';
+	import WritingHeader from '$lib/writing/WritingHeader.svelte';
+	import { AUTHORS, WRITINGS } from '$lib/writing/data';
 
 	export let slug: string;
 
