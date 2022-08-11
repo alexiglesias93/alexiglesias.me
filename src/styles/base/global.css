@@ -1,60 +1,60 @@
 .page-wrapper {
-	position: absolute;
-	width: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .container {
-	width: 100%;
-	max-width: 40rem;
-	margin-right: auto;
-	margin-left: auto;
+  width: 100%;
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .section {
-	padding-top: 8rem;
-	padding-bottom: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .page-padding {
-	padding-right: 2rem;
-	padding-left: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .external-link {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .icon {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .rtb h2 {
-	margin-top: 4rem;
-	margin-bottom: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 .rtb h3 {
-	margin-top: 3rem;
-	margin-bottom: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
 }
 
 .rtb h4 {
-	margin-top: 2rem;
-	margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .rtb img {
-	border-radius: 0.75rem;
+  border-radius: 0.75rem;
 }
 
 .rtb p {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 479px) {
-	.page-padding {
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
-	}
+  .page-padding {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
 }
