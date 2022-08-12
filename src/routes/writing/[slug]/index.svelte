@@ -4,6 +4,7 @@
   import { AUTHORS, WRITINGS } from '$lib/writing/data';
   import WritingHeader from '$lib/writing/WritingHeader.svelte';
   import WritingBack from '$lib/writing/WritingBack.svelte';
+  import Metas from '$lib/components/Metas.svelte';
   import Schema from '$lib/components/Schema.svelte';
 
   export let slug: string;
@@ -14,6 +15,8 @@
   } = module;
   const author_data = AUTHORS[author];
 </script>
+
+<Metas {title} description={subtitle} />
 
 <Schema
   schema={{
