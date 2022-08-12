@@ -43,7 +43,7 @@
   }
 
   .external-link.is-typescript {
-    color: #3178c6;
+    color: #719af4;
   }
 
   .external-link.is-svelte {
@@ -51,10 +51,10 @@
   }
 
   .external-link.is-webflow {
-    color: #4353ff;
+    color: #5d6bff;
   }
 
   .external-link.is-finsweet {
-    color: #f7c75f;
+    color: var(--golden);
   }
 </style>

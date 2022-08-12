@@ -1,6 +1,7 @@
 <script lang="ts">
   import WritingHeader from '$lib/writing/WritingHeader.svelte';
   import { AUTHORS, WRITINGS } from '$lib/writing/data';
+  import WritingBack from '$lib/writing/WritingBack.svelte';
 
   export let slug: string;
 
@@ -15,8 +16,10 @@
   <div class="container">
     <WritingHeader {title} {subtitle} {date} author={author_data} />
 
-    <div class="rtb">
+    <div class="rtb mb-16">
       <svelte:component this={module.default} />
     </div>
+
+    <WritingBack />
   </div>
 </section>

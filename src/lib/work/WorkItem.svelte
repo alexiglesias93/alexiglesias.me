@@ -4,22 +4,18 @@
 
 <script lang="ts">
   import { send, receive } from '$lib/transitions/item-crossfade';
+  import type { WorkItemData } from './data';
 
   export let highlighted: string | null;
-  export let id: string;
-  export let href: string;
-  export let image: string;
-  export let title: string;
-  export let description: string;
-  export let tags: string[];
+  export let item: WorkItemData;
 
   const handle_mouse_enter = () => {
-    highlighted = id;
+    highlighted = item.id;
   };
 </script>
 
 <a
-  {href}
+  href={item.href}
   class="wrapper"
   target="_blank"
   rel="noopener"
@@ -27,20 +23,20 @@
   on:focus={handle_mouse_enter}
 >
   <div class="img-wrapper">
-    <img src={image} loading="lazy" alt={title} />
+    <img src={item.image} loading="lazy" alt={item.title} />
   </div>
 
-  <h3 class="mb-2">{title}</h3>
+  <h3 class="mb-2">{item.title}</h3>
 
-  <p class="mb-4">{description}</p>
+  <p class="mb-4">{item.description}</p>
 
   <div class="tags">
-    {#each tags as tag (tag)}
+    {#each item.tags as tag (tag)}
       <div class="tag">{tag}</div>
     {/each}
   </div>
 
-  {#if highlighted === id}
+  {#if highlighted === item.id}
     <div class="highlight" in:send={{ key: CROSSFADE_KEY }} out:receive={{ key: CROSSFADE_KEY }} />
   {/if}
 </a>

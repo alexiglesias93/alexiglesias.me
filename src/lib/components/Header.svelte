@@ -105,4 +105,10 @@
   .icon {
     width: 1rem;
   }
+
+  @media screen and (max-width: 767px) {
+    header {
+      padding-top: 4rem;
+    }
+  }
 </style>

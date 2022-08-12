@@ -4,6 +4,7 @@
 
 <script lang="ts">
   import { send, receive } from '$lib/transitions/item-crossfade';
+  import { format_date } from '$lib/utils/dates';
 
   export let highlighted: string | null;
   export let slug: string;
@@ -22,7 +23,7 @@
   on:focus={handle_mouse_enter}
 >
   <span>{title}</span>
-  <span class="date">{date}</span>
+  <span class="date">{format_date(date)}</span>
 
   {#if highlighted === slug}
     <div class="highlight" in:send={{ key: CROSSFADE_KEY }} out:receive={{ key: CROSSFADE_KEY }} />

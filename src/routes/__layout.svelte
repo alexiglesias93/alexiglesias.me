@@ -18,5 +18,3 @@
 <PageTransition {pathname}>
   <slot />
 </PageTransition>
-
-<footer class="section" />

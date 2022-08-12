@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { format_date } from '$lib/utils/dates';
   import type { ComponentProps } from 'svelte';
 
   import WritingAuthor from './WritingAuthor.svelte';
@@ -18,7 +19,7 @@
 
   <div class="meta">
     <WritingAuthor {author} />
-    <p class="date">Last Updated:<br />{date}</p>
+    <p class="date">Last Updated:<br />{format_date(date)}</p>
   </div>
 </div>
 
