@@ -8,7 +8,7 @@
 </script>
 
 <Metas
-  title="Alex Iglesias"
+  title="Hello There"
   description="Developing cool s**t for the no-code community. CTO @ Finsweet."
 />
 

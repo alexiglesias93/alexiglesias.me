@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>{title} - Alex Iglesias</title>
   <meta content={description} name="description" />
   <meta content={title} property="og:title" />
   <meta content={description} property="og:description" />
