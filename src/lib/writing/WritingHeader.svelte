@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { format_date } from '$lib/utils/dates';
   import type { ComponentProps } from 'svelte';
+
+  import { format_date } from '$lib/utils/dates';
 
   import WritingAuthor from './WritingAuthor.svelte';
 

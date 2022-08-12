@@ -2,8 +2,8 @@
   import { tick } from 'svelte';
   import { quartOut } from 'svelte/easing';
 
-  import { falide } from '$lib/transitions/falide';
   import { send, receive } from '$lib/transitions/item-crossfade';
+  import { falide } from '$lib/transitions/falide';
 
   import { active_writing_filter_tag } from './stores';
 

@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { WEBSITE_ORIGIN } from '$lib/utils/constants';
   import HomeHero from '$lib/components/HomeHero.svelte';
   import Metas from '$lib/components/Metas.svelte';
   import Schema from '$lib/components/Schema.svelte';
-  import { WEBSITE_ORIGIN } from '$lib/utils/constants';
   import Work from '$lib/work/Work.svelte';
   import Writings from '$lib/writing/Writings.svelte';
 </script>

@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
 
+  import { WRITINGS } from './data';
   import WritingList from './WritingList.svelte';
   import WritingListHeader from './WritingListHeader.svelte';
-  import { WRITINGS } from './data';
 
   const tags_set: Set<string> = new Set();
   const items: ComponentProps<WritingList>['items'] = WRITINGS.map(

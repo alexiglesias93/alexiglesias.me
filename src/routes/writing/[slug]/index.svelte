@@ -1,10 +1,10 @@
 <script lang="ts">
-  import WritingHeader from '$lib/writing/WritingHeader.svelte';
-  import { AUTHORS, WRITINGS } from '$lib/writing/data';
-  import WritingBack from '$lib/writing/WritingBack.svelte';
-  import Schema from '$lib/components/Schema.svelte';
   import { format_iso_date } from '$lib/utils/dates';
   import { WEBSITE_ORIGIN } from '$lib/utils/constants';
+  import { AUTHORS, WRITINGS } from '$lib/writing/data';
+  import WritingHeader from '$lib/writing/WritingHeader.svelte';
+  import WritingBack from '$lib/writing/WritingBack.svelte';
+  import Schema from '$lib/components/Schema.svelte';
 
   export let slug: string;
 

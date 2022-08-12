@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-  import { send, receive } from '$lib/transitions/item-crossfade';
   import { format_date } from '$lib/utils/dates';
+  import { send, receive } from '$lib/transitions/item-crossfade';
 
   export let highlighted: string | null;
   export let slug: string;
