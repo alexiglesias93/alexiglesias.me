@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
 
   import GitHubIcon from '$lib/icons/GitHubIcon.svelte';
-  import LinkedinIcon from '$lib/icons/LinkedinIcon.svelte';
+  import LinkedinIcon from '../icons/LinkedinIcon.svelte';
   import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
 </script>
 
