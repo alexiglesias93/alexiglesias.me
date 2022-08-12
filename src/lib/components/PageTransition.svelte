@@ -2,9 +2,11 @@
   import { quartOut } from 'svelte/easing';
   import { fade } from 'svelte/transition';
 
+  import { PAGE_TRANSITION_DURATION } from '$lib/utils/constants';
+
   export let pathname = '';
 
-  const duration = 300;
+  const duration = PAGE_TRANSITION_DURATION;
   const easing = quartOut;
 </script>
 
