@@ -2,19 +2,50 @@
   import WritingHeader from '$lib/writing/WritingHeader.svelte';
   import { AUTHORS, WRITINGS } from '$lib/writing/data';
   import WritingBack from '$lib/writing/WritingBack.svelte';
+  import Schema from '$lib/components/Schema.svelte';
+  import { format_iso_date } from '$lib/utils/dates';
+  import { WEBSITE_ORIGIN } from '$lib/utils/constants';
 
   export let slug: string;
 
   const { module } = WRITINGS.find((writing) => writing.slug === slug)!;
   const {
-    metadata: { author, date, subtitle, title }
+    metadata: { author, date_published, date_modified, subtitle, title }
   } = module;
   const author_data = AUTHORS[author];
 </script>
 
+<Schema
+  schema={{
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${WEBSITE_ORIGIN}/writing/${slug}`
+    },
+    headline: title,
+    description: subtitle,
+    image: `${WEBSITE_ORIGIN}/images/authors/alex.jpg`,
+    author: {
+      '@type': 'Person',
+      name: author_data.img,
+      url: WEBSITE_ORIGIN
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Alex Iglesias',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${WEBSITE_ORIGIN}/images/authors/alex.jpg`
+      }
+    },
+    datePublished: format_iso_date(date_published),
+    dateModified: format_iso_date(date_modified)
+  }}
+/>
+
 <section class="section page-padding">
   <div class="container">
-    <WritingHeader {title} {subtitle} {date} author={author_data} />
+    <WritingHeader {title} {subtitle} date={date_modified} author={author_data} />
 
     <div class="rtb mb-16">
       <svelte:component this={module.default} />

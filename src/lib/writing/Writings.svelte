@@ -10,14 +10,14 @@
     ({
       slug,
       module: {
-        metadata: { date, title, tags }
+        metadata: { date_modified, title, tags }
       }
     }) => {
       for (const tag of tags) tags_set.add(tag);
 
       return {
         title,
-        date,
+        date: date_modified,
         slug,
         tags
       };
@@ -26,7 +26,7 @@
   const tags = [...tags_set].sort((a, b) => a.localeCompare(b));
 </script>
 
-<section class="section page-padding">
+<section class="section page-padding mb-16">
   <div class="container">
     <WritingListHeader {tags} />
     <WritingList {items} />

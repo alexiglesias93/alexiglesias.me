@@ -14,7 +14,8 @@ export interface WritingMetaData {
   title: string;
   subtitle: string;
   author: keyof typeof AUTHORS;
-  date: string;
+  date_published: string;
+  date_modified: string;
   tags: string[];
 }
 

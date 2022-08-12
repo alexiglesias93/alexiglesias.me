@@ -2,7 +2,8 @@
 title: Hey, ho, let's go!
 subtitle: It was about time I released my own portfolio. This is the beginning of a (hopefully) nice blog.
 author: alex
-date: '10 Aug 2022'
+date_published: '10 Aug 2022'
+date_modified: '10 Aug 2022'
 tags:
   - Other
 ---
