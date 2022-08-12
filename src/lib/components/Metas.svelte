@@ -1,7 +1,7 @@
 <script lang="ts">
   export let title: string;
   export let description: string;
-  export let image = '/images/open-graph.jpg';
+  export let image = '/images/open-graph.webp';
 </script>
 
 <svelte:head>

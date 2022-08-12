@@ -17,7 +17,7 @@
     '@type': 'Person',
     name: 'Alex Iglesias',
     url: WEBSITE_ORIGIN,
-    image: `${WEBSITE_ORIGIN}/images/authors/alex.jpg`,
+    image: `${WEBSITE_ORIGIN}/images/authors/alex.webp`,
     sameAs: [
       'https://twitter.com/alexiglesias_me',
       'https://www.linkedin.com/in/alexiglesias93/',

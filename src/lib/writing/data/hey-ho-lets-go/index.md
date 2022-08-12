@@ -16,7 +16,7 @@ import WritingImage from "../../WritingImage.svelte";
 
 I gotta be honest, working on my own stuff is when I procrastinate the most. Eighteen months have passed since I purchased this domain.
 
-<WritingImage src="https://res.cloudinary.com/alexiglesias/image/upload/v1660241878/writings/Hey%2C%20ho%2C%20let%27s%20go%21/alexiglesias.me-receipt.webp" caption="My domain receipt after a compulsive purchase."></WritingImage>
+<WritingImage src="/images/writings/hey-ho-lets-go/domain-receipt.webp" caption="My domain receipt after a compulsive purchase."></WritingImage>
 
 And oh boi, it's been a struggle.
 

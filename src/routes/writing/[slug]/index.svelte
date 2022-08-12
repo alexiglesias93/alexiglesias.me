@@ -24,7 +24,7 @@
     },
     headline: title,
     description: subtitle,
-    image: `${WEBSITE_ORIGIN}/images/authors/alex.jpg`,
+    image: `${WEBSITE_ORIGIN}/images/authors/alex.webp`,
     author: {
       '@type': 'Person',
       name: author_data.img,
@@ -35,7 +35,7 @@
       name: 'Alex Iglesias',
       logo: {
         '@type': 'ImageObject',
-        url: `${WEBSITE_ORIGIN}/images/authors/alex.jpg`
+        url: `${WEBSITE_ORIGIN}/images/authors/alex.webp`
       }
     },
     datePublished: format_iso_date(date_published),
