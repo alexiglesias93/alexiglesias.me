@@ -4,6 +4,6 @@
 </script>
 
 <figure>
-  <img {src} alt={caption} />
+  <img {src} alt={caption} loading="lazy" />
   <figcaption aria-hidden="true">{caption}</figcaption>
 </figure>
