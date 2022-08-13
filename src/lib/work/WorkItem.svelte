@@ -47,15 +47,16 @@
     display: flex;
     flex-direction: column;
     outline: none;
+    padding: 2rem 1rem;
   }
 
   .highlight {
     position: absolute;
     opacity: 0;
-    left: -1rem;
-    top: -1rem;
-    right: -1rem;
-    bottom: -1rem;
+    left: 0rem;
+    top: 1rem;
+    right: 0rem;
+    bottom: 1rem;
     z-index: -1;
     border-radius: 0.5rem;
     background-color: var(--grey);

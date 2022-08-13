@@ -16,10 +16,9 @@
   .wrapper {
     display: grid;
     grid-auto-columns: 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 4rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    margin: -2rem -1rem;
   }
 
   @media screen and (max-width: 767px) {
