@@ -16,12 +16,7 @@
   };
 </script>
 
-<a
-  href="/writing/{slug}"
-  class="wrapper"
-  on:mouseenter={handle_mouse_enter}
-  on:focus={handle_mouse_enter}
->
+<a href="/writing/{slug}" on:mouseenter={handle_mouse_enter} on:focus={handle_mouse_enter}>
   <span>{title}</span>
   <span class="date">{format_date(date)}</span>
 
@@ -31,7 +26,7 @@
 </a>
 
 <style>
-  .wrapper {
+  a {
     display: flex;
     position: relative;
     padding-top: 1rem;
@@ -60,8 +55,8 @@
     transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-  .wrapper:hover .highlight,
-  .wrapper:focus .highlight {
+  a:hover .highlight,
+  a:focus .highlight {
     opacity: 1;
   }
 </style>
