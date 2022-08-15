@@ -23,13 +23,9 @@
 
   @media screen and (max-width: 767px) {
     .wrapper {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media screen and (max-width: 479px) {
-    .wrapper {
-      grid-template-columns: 1fr;
+      display: flex;
+      overflow: auto;
+      scroll-snap-type: x mandatory;
     }
   }
 </style>

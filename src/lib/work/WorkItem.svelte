@@ -16,7 +16,6 @@
 
 <a
   href={item.href}
-  class="wrapper"
   target="_blank"
   rel="noopener"
   on:mouseenter={handle_mouse_enter}
@@ -42,7 +41,7 @@
 </a>
 
 <style>
-  .wrapper {
+  a {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -63,8 +62,8 @@
     transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-  .wrapper:hover .highlight,
-  .wrapper:focus .highlight {
+  a:hover .highlight,
+  a:focus .highlight {
     opacity: 1;
   }
 
@@ -98,5 +97,18 @@
     border-radius: 0.25rem;
     background-color: var(--white-smoke-25);
     font-size: 0.75rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    a {
+      min-width: 60vw;
+      scroll-snap-align: start;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    a {
+      min-width: 80vw;
+    }
   }
 </style>
