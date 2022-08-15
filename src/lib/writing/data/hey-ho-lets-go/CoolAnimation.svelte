@@ -4,8 +4,6 @@
   const handle_click = () => {
     if (clicked) return;
 
-    console.log('handling');
-
     clicked = true;
     setTimeout(() => {
       clicked = false;
