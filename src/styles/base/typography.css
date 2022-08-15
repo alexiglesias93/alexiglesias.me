@@ -3,12 +3,12 @@
 }
 
 html {
-  font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+  font-size: 1.25rem;
 }
 
 @media screen and (max-width: 1920px) {
   html {
-    font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
+    font-size: calc(0.9423076923076923rem + 0.25641025641025644vw);
   }
 }
 
