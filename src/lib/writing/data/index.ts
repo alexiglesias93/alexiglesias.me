@@ -24,13 +24,22 @@ interface WritingData {
   metadata: WritingMetaData;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const convert_path_to_slug = (path: string) => path.match(/(?<=.\/)(.*)(?=\/index.md)/g)![0];
+interface FormattedWritingData {
+  slug: string;
+  module: WritingData;
+}
+
+const convert_path_to_slug = (path: string) => path.match(/\.\/(.*?)\/index\.md/)?.[1];
 
 const glob_import = import.meta.glob<WritingData>('./**/*.md', { eager: true });
-export const WRITINGS = Object.entries(glob_import).map(([path, module]) => {
-  return {
-    module,
-    slug: convert_path_to_slug(path)
-  };
-});
+
+export const WRITINGS = Object.entries(glob_import).reduce<FormattedWritingData[]>(
+  (acc, [path, module]) => {
+    const slug = convert_path_to_slug(path);
+
+    if (slug) acc.push({ module, slug });
+
+    return acc;
+  },
+  []
+);
