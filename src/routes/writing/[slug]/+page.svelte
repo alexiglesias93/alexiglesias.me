@@ -1,4 +1,10 @@
 <script lang="ts">
+  // throw new Error(
+  //   '@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
+  // );
+
+  import type { PageData } from './$types';
+
   import { format_iso_date } from '$lib/utils/dates';
   import { WEBSITE_ORIGIN } from '$lib/utils/constants';
   import { AUTHORS, WRITINGS } from '$lib/writing/data';
@@ -7,9 +13,9 @@
   import Metas from '$lib/components/Metas.svelte';
   import Schema from '$lib/components/Schema.svelte';
 
-  export let slug: string;
+  export let data: PageData;
 
-  const { module } = WRITINGS.find((writing) => writing.slug === slug)!;
+  const { module } = WRITINGS.find((writing) => writing.slug === data.slug)!;
   const {
     metadata: { author, date_published, date_modified, subtitle, title }
   } = module;
@@ -23,7 +29,7 @@
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${WEBSITE_ORIGIN}/writing/${slug}`
+      '@id': `${WEBSITE_ORIGIN}/writing/${data.slug}`
     },
     headline: title,
     description: subtitle,

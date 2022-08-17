@@ -1,10 +1,7 @@
-<script lang="ts" context="module">
-  import type { Load } from '@sveltejs/kit';
-
-  export const load: Load = async ({ url: { pathname } }) => ({ props: { pathname } });
-</script>
-
 <script lang="ts">
+  // throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+  import type { LayoutData } from './$types';
+
   import { afterNavigate, disableScrollHandling } from '$app/navigation';
 
   import Header from '$lib/components/Header.svelte';
@@ -14,7 +11,7 @@
 
   import '../styles/app.css';
 
-  export let pathname: string;
+  export let data: LayoutData;
 
   afterNavigate(async () => {
     disableScrollHandling();
@@ -25,6 +22,6 @@
 
 <Header />
 
-<PageTransition {pathname}>
+<PageTransition pathname={data.pathname}>
   <slot />
 </PageTransition>
