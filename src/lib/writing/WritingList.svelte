@@ -9,7 +9,7 @@
 
   type Item = Omit<ComponentProps<WritingItem>, 'highlighted'> & { tags: string[] };
 
-  export let items: Item[] = [];
+  export let items: Item[];
 
   let highlighted: string | null = null;
 
