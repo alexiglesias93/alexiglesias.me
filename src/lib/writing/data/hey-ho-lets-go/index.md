@@ -16,7 +16,10 @@ import WritingImage from "../../WritingImage.svelte";
 
 I gotta be honest, working on my own stuff is when I procrastinate the most. Eighteen months have passed since I purchased this domain.
 
-<WritingImage src="/images/writings/hey-ho-lets-go/domain-receipt.webp" caption="My domain receipt after a compulsive purchase."></WritingImage>
+<WritingImage
+  src="/images/writings/hey-ho-lets-go/domain-receipt.webp"
+  caption="My domain receipt after a compulsive purchase."
+/>
 
 And oh boi, it's been a struggle.
 
@@ -30,7 +33,7 @@ But I can already tell you it'll be either **Webflow**, **TypeScript** or **Svel
 
 In fact, this very own website is built using **SvelteKit**, which gives me enough freedom to do nice stuff like this:
 
-<CoolAnimation></CoolAnimation>
+<CoolAnimation />
 
 How cool is that? I've always loved learning from interactive content.
 
