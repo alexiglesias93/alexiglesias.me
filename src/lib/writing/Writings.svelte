@@ -8,7 +8,7 @@
   export let tags: string[];
 </script>
 
-<section class="section page-padding mb-16">
+<section class="section page-padding">
   <div class="container">
     <WritingListHeader {tags} />
     <WritingList {items} />
