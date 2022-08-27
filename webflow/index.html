@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Fri Aug 12 2022 08:04:06 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sat Aug 27 2022 09:19:04 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="60a150c067e8ec2b69a58764" data-wf-site="60a150c067e8ec1e0fa58763" lang="en">
 <head>
   <meta charset="utf-8">
@@ -19,42 +19,56 @@
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/alexiglesias.webflow.css" rel="stylesheet" type="text/css">
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <script type="text/javascript">
+      ! function(o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+      }(window, document);
+    </script>
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
   <div class="hidden w-embed">
     <style>
-	html {
-		font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
-	}
-	@media screen and (max-width: 1920px) {
-		html {
-			font-size: calc(0.9711538461538461rem + 0.12820512820512822vw);
-		}
-	}
-	@media screen and (max-width: 360px) {
-		html {
-			font-size: calc(0.7493036211699164rem + 1.1142061281337046vw);
-		}
-	}
-	.logo:hover .logo__a {
-		color: #ffffff;
-	}
-	.work-item__wrapper:hover .work-item__highlight {
-		opacity: 1;
-	}
-	.writing-row__wrapper:hover .writing-row__highlight {
-		opacity: 1;
-	}
-  .writing-back__a {
-    display: inline-flex;
-  }
-  .writing-back__a:hover .icon {
-    transform: translateX(-0.25rem);
-  }
-</style>
+        html {
+          font-size: 1.25rem;
+        }
+        @media screen and (max-width: 1920px) {
+          html {
+            font-size: calc(0.9423076923076923rem + 0.25641025641025644vw);
+          }
+        }
+        @media screen and (max-width: 360px) {
+          html {
+            font-size: calc(0.7493036211699164rem + 1.1142061281337046vw);
+          }
+        }
+        .logo:hover .logo__a {
+          color: #ffffff;
+        }
+        .work-item__a:hover .work-item__highlight {
+          opacity: 1;
+        }
+        .writing-row__a:hover .writing-row__highlight {
+          opacity: 1;
+        }
+        .writing-back__a {
+          display: inline-flex;
+        }
+        .writing-back__a:hover .icon {
+          transform: translateX(-0.25rem);
+        }
+        @media screen and (max-width: 767px) {
+          .work-list__wrapper {
+            scroll-snap-type: x mandatory;
+          }
+          .work-item__a {
+            scroll-snap-align: start;
+          }
+        }
+      </style>
   </div>
   <header class="header__header page-padding">
     <div class="container">
@@ -93,8 +107,8 @@
       <div class="container">
         <h2 class="mb-12">Work</h2>
         <div class="work-list__wrapper">
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_1.webp" loading="lazy" srcset="images/slack-imgs_1-p-500.png 500w, images/slack-imgs_1-p-800.png 800w, images/slack-imgs_1.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/finsweet-extension.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Finsweet Extension</h3>
             <p class="mb-4">A badass workflow toolkit for Webflow.</p>
             <div class="work-item__tags">
@@ -105,8 +119,8 @@
             </div>
             <div class="work-item__highlight"></div>
           </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs.webp" loading="lazy" srcset="images/slack-imgs-p-500.png 500w, images/slack-imgs-p-800.png 800w, images/slack-imgs-p-1080.png 1080w, images/slack-imgs.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/attributes.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Attributes</h3>
             <p class="mb-4">No-code Attributes solutions for Webflow.</p>
             <div class="work-item__tags">
@@ -115,8 +129,8 @@
             </div>
             <div class="work-item__highlight"></div>
           </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_2.webp" loading="lazy" srcset="images/slack-imgs_2-p-500.png 500w, images/slack-imgs_2-p-800.png 800w, images/slack-imgs_2-p-1080.png 1080w, images/slack-imgs_2.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/cookie-consent.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Cookie Consent</h3>
             <p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
             <div class="work-item__tags">
@@ -125,8 +139,8 @@
             </div>
             <div class="work-item__highlight"></div>
           </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_2.webp" loading="lazy" srcset="images/slack-imgs_2-p-500.png 500w, images/slack-imgs_2-p-800.png 800w, images/slack-imgs_2-p-1080.png 1080w, images/slack-imgs_2.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/finsweet-sso.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Cookie Consent</h3>
             <p class="mb-4">Incredibly powerful cookie consent plugin for Webflow.</p>
             <div class="work-item__tags">
@@ -135,8 +149,8 @@
             </div>
             <div class="work-item__highlight"></div>
           </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs_1.webp" loading="lazy" srcset="images/slack-imgs_1-p-500.png 500w, images/slack-imgs_1-p-800.png 800w, images/slack-imgs_1.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/advanced-webflow-forms.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Finsweet Extension</h3>
             <p class="mb-4">A badass workflow toolkit for Webflow.</p>
             <div class="work-item__tags">
@@ -147,8 +161,8 @@
             </div>
             <div class="work-item__highlight"></div>
           </a>
-          <a href="#" class="work-item__wrapper w-inline-block">
-            <div class="work-item__img-wrapper"><img src="images/slack-imgs.webp" loading="lazy" srcset="images/slack-imgs-p-500.png 500w, images/slack-imgs-p-800.png 800w, images/slack-imgs-p-1080.png 1080w, images/slack-imgs.webp 1200w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 41vw, (max-width: 991px) 26vw, 20vw" alt="" class="work-item__img"></div>
+          <a href="#" class="work-item__a w-inline-block">
+            <div class="work-item__img-wrapper"><img src="images/enterprise-sales-demo.webp" loading="lazy" alt="" class="work-item__img"></div>
             <h3 class="mb-2">Attributes</h3>
             <p class="mb-4">No-code Attributes solutions for Webflow.</p>
             <div class="work-item__tags">
@@ -181,12 +195,12 @@
           </div>
         </div>
         <div class="writing-list__wrapper">
-          <a href="#" class="writing-item__wrapper w-inline-block">
+          <a href="#" class="writing-item__a w-inline-block">
             <div>Gutting Webflow - Everything about checkboxes</div>
             <div class="writing-item__date">July 01, 2022</div>
             <div class="writing-item__highlight"></div>
           </a>
-          <a href="#" class="writing-item__wrapper w-inline-block">
+          <a href="#" class="writing-item__a w-inline-block">
             <div>Hey ho, let&#x27;s go!</div>
             <div class="writing-item__date">June 25, 2022</div>
             <div class="writing-item__highlight"></div>
