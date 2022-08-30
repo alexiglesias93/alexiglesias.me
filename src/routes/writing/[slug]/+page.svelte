@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-
-  import { format_iso_date } from '$lib/utils/dates';
-  import { WEBSITE_ORIGIN } from '$lib/utils/constants';
-  import { AUTHORS, WRITINGS } from '$lib/writing/data';
-  import WritingHeader from '$lib/writing/WritingHeader.svelte';
-  import WritingBack from '$lib/writing/WritingBack.svelte';
   import Metas from '$lib/components/Metas.svelte';
   import Schema from '$lib/components/Schema.svelte';
+  import { WEBSITE_ORIGIN } from '$lib/utils/constants';
+  import { format_iso_date } from '$lib/utils/dates';
+  import WritingBack from '$lib/writing/WritingBack.svelte';
+  import WritingHeader from '$lib/writing/WritingHeader.svelte';
+  import { AUTHORS, WRITINGS } from '$lib/writing/data';
+
+  import type { PageData } from './$types';
 
   export let data: PageData;
 
@@ -17,6 +17,10 @@
   } = module;
   const author_data = AUTHORS[author];
 </script>
+
+<svelte:head>
+  <link href="/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+</svelte:head>
 
 <Metas {title} description={subtitle} />
 

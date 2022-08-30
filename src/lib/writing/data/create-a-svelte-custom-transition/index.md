@@ -17,3 +17,12 @@ This is some text before.
 <TransitionSlider />
 
 This is some text after.
+
+```html
+<img
+  style="opacity: {time};"
+  src="https://media.giphy.com/media/gjgWQA5QBuBmUZahOP/giphy-downsized.gif"
+  alt="Awkward Dance"
+  loading="lazy"
+/>
+```
