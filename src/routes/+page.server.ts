@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'svelte';
 
-import { dev } from '$app/env';
+import { dev } from '$app/environment';
 import type Writings from '$lib/writing/Writings.svelte';
 import { WRITINGS } from '$lib/writing/data';
 

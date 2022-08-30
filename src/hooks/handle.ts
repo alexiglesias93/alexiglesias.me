@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { minify } from 'html-minifier';
 
-import { prerendering } from '$app/env';
+import { prerendering } from '$app/environment';
 
 const minification_options = {
   collapseBooleanAttributes: true,
