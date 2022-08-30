@@ -54,6 +54,8 @@
   .animation {
     font-size: 50vw;
     font-weight: 900;
+    user-select: none;
+    pointer-events: none;
     display: flex;
     justify-content: center;
     align-items: center;

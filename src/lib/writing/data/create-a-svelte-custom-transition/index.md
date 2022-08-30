@@ -5,7 +5,7 @@ author: alex
 date_published: ''
 date_modified: ''
 tags:
-  - Other
+  - Svelte
 ---
 
 <script>

@@ -1,8 +1,8 @@
 @import 'modern-normalize/modern-normalize.css';
 
-@import 'base/typography.css';
-@import 'base/colors.css';
-@import 'base/base.css';
-@import 'base/utility.css';
-@import 'base/global.css';
-@import 'base/pseudo.css';
+@import 'typography.css';
+@import 'colors.css';
+@import 'base.css';
+@import 'utility.css';
+@import 'global.css';
+@import 'pseudo.css';
