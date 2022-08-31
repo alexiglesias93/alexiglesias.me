@@ -2,8 +2,8 @@
   import ArrowLeftIcon from '$lib/icons/ArrowLeftIcon.svelte';
 </script>
 
-<a href="/" class="writing-back__a">
-  <div class="icon writing-back__icon">
+<a href="/">
+  <div class="icon">
     <ArrowLeftIcon />
   </div>
   <div>Back to Home</div>
