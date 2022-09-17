@@ -14,14 +14,14 @@
     "update": "pnpm update -r -i -L"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.42",
-    "@sveltejs/kit": "1.0.0-next.480",
+    "@sveltejs/adapter-static": "1.0.0-next.43",
+    "@sveltejs/kit": "1.0.0-next.484",
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "@types/html-minifier": "^4.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
-    "autoprefixer": "^10.4.8",
-    "eslint": "^8.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "autoprefixer": "^10.4.11",
+    "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "html-minifier": "^4.0.0",
@@ -34,7 +34,7 @@
     "svelte-preprocess": "^4.10.7",
     "tslib": "^2.4.0",
     "typescript": "^4.8.3",
-    "vite": "^3.1.0"
+    "vite": "^3.1.2"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
