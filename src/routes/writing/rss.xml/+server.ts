@@ -6,15 +6,28 @@ import { WRITINGS } from '$lib/writing/data';
 export const prerender = true;
 
 export const GET: RequestHandler = () => {
-  const most_recent_publish_date = WRITINGS.reduce<Date>((acc, curr) => {
-    const curr_date = new Date(curr.module.metadata.date_published);
+  const most_recent_publish_date =
+    WRITINGS.reduce<Date | null>(
+      (
+        acc,
+        {
+          module: {
+            metadata: { date_published }
+          }
+        }
+      ) => {
+        if (!date_published) return acc;
 
-    if (curr_date > acc) {
-      acc = curr_date;
-    }
+        const curr_date = new Date(date_published);
 
-    return acc;
-  }, new Date(WRITINGS[0].module.metadata.date_published));
+        if (!acc || curr_date > acc) {
+          acc = curr_date;
+        }
+
+        return acc;
+      },
+      null
+    ) || new Date();
 
   const writings_xml = WRITINGS.map(
     ({
