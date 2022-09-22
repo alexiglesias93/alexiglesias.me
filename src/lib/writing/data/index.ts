@@ -1,5 +1,3 @@
-import type { SvelteComponent } from 'svelte';
-
 export type Author = typeof AUTHORS[keyof typeof AUTHORS];
 
 export const AUTHORS = {
@@ -20,7 +18,7 @@ export interface WritingMetaData {
 }
 
 interface WritingData {
-  default: SvelteComponent;
+  default: ConstructorOfATypedSvelteComponent;
   metadata: WritingMetaData;
 }
 
