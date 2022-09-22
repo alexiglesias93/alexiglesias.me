@@ -22,7 +22,10 @@ export const GET: RequestHandler = () => {
       module: {
         metadata: { date_published, subtitle, title }
       }
-    }) => `<item>
+    }) => {
+      if (!date_published) return null;
+
+      return `<item>
       <title>${title}</title>
       <link>${WEBSITE_ORIGIN}/writing/${slug}</link>
       <guid>${WEBSITE_ORIGIN}/writing/${slug}</guid>
@@ -30,8 +33,9 @@ export const GET: RequestHandler = () => {
       <pubDate>${new Date(date_published).toUTCString()}</pubDate>
       <media:content url="${WEBSITE_ORIGIN}/images/open-graph.jpg" medium="image"/>
       <media:thumbnail url="${WEBSITE_ORIGIN}/images/open-graph.jpg"/>
-    </item>`
-  ).join(`
+    </item>`;
+    }
+  ).filter(Boolean).join(`
     `);
 
   const xml = `<?xml version="1.0" encoding="utf-8"?>
