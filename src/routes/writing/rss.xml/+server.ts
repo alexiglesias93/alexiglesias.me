@@ -3,6 +3,8 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { WEBSITE_ORIGIN } from '$lib/utils/constants';
 import { WRITINGS } from '$lib/writing/data';
 
+export const prerender = true;
+
 export const GET: RequestHandler = () => {
   const most_recent_publish_date = WRITINGS.reduce<Date>((acc, curr) => {
     const curr_date = new Date(curr.module.metadata.date_published);
