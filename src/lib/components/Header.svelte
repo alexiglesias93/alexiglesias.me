@@ -14,7 +14,7 @@
       <nav class="links">
         <a
           aria-label="GitHub"
-          rel="noopener"
+          rel="noreferrer"
           href="https://github.com/alexiglesias93"
           target="_blank"
           class="text-link"
@@ -25,7 +25,7 @@
         </a>
         <a
           aria-label="Twitter"
-          rel="noopener"
+          rel="noreferrer"
           href="https://twitter.com/alexiglesias_me"
           target="_blank"
           class="text-link"
@@ -36,7 +36,7 @@
         </a>
         <a
           aria-label="LinkedIn"
-          rel="noopener"
+          rel="noreferrer"
           href="https://www.linkedin.com/in/alexiglesias93/"
           target="_blank"
           class="text-link"

@@ -6,16 +6,19 @@
       working with modern languages and tools like
       <a
         href="https://www.typescriptlang.org/"
-        rel="noopener"
+        rel="noreferrer"
         target="_blank"
         class="external-link is-typescript">Typescript</a
       >,
-      <a href="https://svelte.dev/" rel="noopener" target="_blank" class="external-link is-svelte"
+      <a href="https://svelte.dev/" rel="noreferrer" target="_blank" class="external-link is-svelte"
         >Svelte</a
       >
       and
-      <a href="https://webflow.com/" rel="noopener" target="_blank" class="external-link is-webflow"
-        >Webflow</a
+      <a
+        href="https://webflow.com/"
+        rel="noreferrer"
+        target="_blank"
+        class="external-link is-webflow">Webflow</a
       >.<br />
     </p>
 
@@ -23,7 +26,7 @@
       Currently rocking as CTO of
       <a
         href="https://www.finsweet.com/"
-        rel="noopener"
+        rel="noreferrer"
         target="_blank"
         class="external-link is-finsweet">Finsweet</a
       > 💪

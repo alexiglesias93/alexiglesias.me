@@ -4,6 +4,7 @@
 
 <script lang="ts">
   import { send, receive } from '$lib/transitions/item-crossfade';
+
   import type { WorkItemData } from './data';
 
   export let highlighted: string | null;
@@ -17,7 +18,7 @@
 <a
   href={item.href}
   target="_blank"
-  rel="noopener"
+  rel="noreferrer"
   on:mouseenter={handle_mouse_enter}
   on:focus={handle_mouse_enter}
 >

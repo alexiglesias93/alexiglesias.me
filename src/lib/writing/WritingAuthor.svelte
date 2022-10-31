@@ -8,7 +8,7 @@
   <img src={author.img} loading="lazy" alt={author.name} />
   <div>
     <div>{author.name}</div>
-    <a rel="noopener" href="https://twitter.com/{author.twitter}" target="_blank">
+    <a rel="noreferrer" href="https://twitter.com/{author.twitter}" target="_blank">
       @{author.twitter}
     </a>
   </div>
