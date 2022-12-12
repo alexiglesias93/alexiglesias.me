@@ -1,9 +1,10 @@
 <script lang="ts">
   import { afterNavigate, disableScrollHandling } from '$app/navigation';
+  import { page } from '$app/stores';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
-  import { PAGE_TRANSITION_DURATION } from '$lib/utils/constants';
+  import { PAGE_TRANSITION_DURATION, WEBSITE_ORIGIN } from '$lib/utils/constants';
   import { wait } from '$lib/utils/helpers';
 
   import '../styles/app.css';
@@ -17,6 +18,10 @@
     window.scrollTo(0, 0);
   });
 </script>
+
+<svelte:head>
+  <link rel="canonical" href={WEBSITE_ORIGIN + data.pathname} />
+</svelte:head>
 
 <Header />
 
