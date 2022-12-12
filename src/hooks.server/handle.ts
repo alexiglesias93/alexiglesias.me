@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { minify } from 'html-minifier';
 
-import { prerendering } from '$app/environment';
+import { building } from '$app/environment';
 
 const minification_options = {
   collapseBooleanAttributes: true,
@@ -27,7 +27,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   const { status, headers } = response;
 
-  if (prerendering && headers.get('content-type') === 'text/html') {
+  if (building && headers.get('content-type') === 'text/html') {
     const markup = await response.text();
     const minified = minify(markup, minification_options);
 
