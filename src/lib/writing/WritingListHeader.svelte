@@ -3,7 +3,7 @@
   import { quartOut } from 'svelte/easing';
 
   import { falide } from '$lib/transitions/falide';
-  import { send, receive } from '$lib/transitions/item-crossfade';
+  import { receive, send } from '$lib/transitions/item-crossfade';
 
   import { active_writing_filter_tag } from './stores';
 
@@ -20,10 +20,10 @@
 
   let filters: Filter[] = [
     ...tags.map((tag) => ({ tag, label: tag, active: false })),
-    { tag: null, label: 'All Writings', active: true }
+    { tag: null, label: 'All Writings', active: true },
   ];
 
-  let active_pin_timeout: NodeJS.Timeout;
+  let active_pin_timeout: ReturnType<typeof setTimeout>;
   let hovering = false;
 
   $: active_filter = filters.find(({ active }) => active)!;

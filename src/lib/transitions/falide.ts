@@ -11,7 +11,7 @@ export const falide = (
   {
     delay = 0,
     duration = 400,
-    easing = cubicOut
+    easing = cubicOut,
   }: { delay?: number; duration?: number; easing?: EasingFunction } = {}
 ): TransitionConfig => {
   const style = getComputedStyle(node);
@@ -42,6 +42,6 @@ export const falide = (
         `border-bottom-width: ${first_half_t * border_bottom_width}px;` +
         `opacity: ${second_half_t * opacity}`
       );
-    }
+    },
   };
 };

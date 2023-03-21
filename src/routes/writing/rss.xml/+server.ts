@@ -12,8 +12,8 @@ export const GET: RequestHandler = () => {
         acc,
         {
           module: {
-            metadata: { date_published }
-          }
+            metadata: { date_published },
+          },
         }
       ) => {
         if (!date_published) return acc;
@@ -33,8 +33,8 @@ export const GET: RequestHandler = () => {
     ({
       slug,
       module: {
-        metadata: { date_published, subtitle, title }
-      }
+        metadata: { date_published, subtitle, title },
+      },
     }) => {
       if (!date_published) return null;
 
@@ -65,7 +65,7 @@ export const GET: RequestHandler = () => {
 
   return new Response(xml, {
     headers: {
-      'content-type': 'application/rss+xml'
-    }
+      'content-type': 'application/rss+xml',
+    },
   });
 };

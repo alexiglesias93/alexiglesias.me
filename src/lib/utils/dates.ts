@@ -6,7 +6,7 @@ export const format_date = (date_string: string) =>
   new Date(date_string).toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'short',
-    day: 'numeric'
+    day: 'numeric',
   });
 
 /**

@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'svelte';
 
 import { dev } from '$app/environment';
-import type Writings from '$lib/writing/Writings.svelte';
 import { WRITINGS } from '$lib/writing/data';
+import type Writings from '$lib/writing/Writings.svelte';
 
 import type { PageServerLoad } from './$types';
 
@@ -15,8 +15,8 @@ export const load: PageServerLoad = async () => {
       {
         slug,
         module: {
-          metadata: { date_published, date_modified, title, tags }
-        }
+          metadata: { date_published, date_modified, title, tags },
+        },
       }
     ) => {
       if (!dev && !date_published) return acc;
@@ -27,7 +27,7 @@ export const load: PageServerLoad = async () => {
         title,
         date: date_modified,
         slug,
-        tags
+        tags,
       });
 
       return acc;
@@ -39,6 +39,6 @@ export const load: PageServerLoad = async () => {
 
   return {
     writing_items,
-    tags
+    tags,
   };
 };

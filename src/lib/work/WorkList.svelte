@@ -1,6 +1,5 @@
 <script lang="ts">
   import { WORK_ITEMS } from './data';
-
   import WorkItem from './WorkItem.svelte';
 
   let highlighted: string | null = null;

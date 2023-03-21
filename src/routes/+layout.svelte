@@ -1,13 +1,13 @@
 <script lang="ts">
+  import '../styles/app.css';
+
   import { afterNavigate, disableScrollHandling } from '$app/navigation';
-  import { page } from '$app/stores';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
   import { PAGE_TRANSITION_DURATION, WEBSITE_ORIGIN } from '$lib/utils/constants';
   import { wait } from '$lib/utils/helpers';
 
-  import '../styles/app.css';
   import type { LayoutData } from './$types';
 
   export let data: LayoutData;

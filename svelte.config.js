@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 import autoprefixer from 'autoprefixer';
 import { mdsvex } from 'mdsvex';
-import preprocess from 'svelte-preprocess';
 
 import mdsvexConfig from './mdsvex.config.js';
 
@@ -11,16 +11,16 @@ const config = {
 
   preprocess: [
     mdsvex(mdsvexConfig),
-    preprocess({
+    vitePreprocess({
       postcss: {
-        plugins: [autoprefixer()]
-      }
-    })
+        plugins: [autoprefixer()],
+      },
+    }),
   ],
 
   kit: {
     adapter: adapter(),
-  }
+  },
 };
 
 export default config;

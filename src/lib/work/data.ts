@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-export type WorkItemData = typeof WORK_ITEMS[number];
+export type WorkItemData = (typeof WORK_ITEMS)[number];
 
 export const WORK_ITEMS = [
   {
@@ -9,7 +9,7 @@ export const WORK_ITEMS = [
     description: 'A badass workflow toolkit for Webflow.',
     href: 'https://chrome.google.com/webstore/detail/finsweet-extension-for-we/mjfibgdpclkaemogkfadpbdfoinnejep',
     image: 'images/work/finsweet-extension.webp',
-    tags: ['svelte', 'extension', 'typescript', 'webflow']
+    tags: ['svelte', 'extension', 'typescript', 'webflow'],
   },
   {
     id: nanoid(),
@@ -17,7 +17,7 @@ export const WORK_ITEMS = [
     description: 'No-code Attributes solutions for Webflow.',
     href: 'https://www.finsweet.com/attributes',
     image: 'images/work/attributes.webp',
-    tags: ['typescript', 'webflow']
+    tags: ['typescript', 'webflow'],
   },
   {
     id: nanoid(),
@@ -25,7 +25,7 @@ export const WORK_ITEMS = [
     description: 'One single account for all Finsweet products, services, and preferences.',
     href: 'https://www.finsweet.com/fin-pro/log-in-with-finsweet',
     image: 'images/work/finsweet-sso.webp',
-    tags: ['svelte', 'typescript', 'backend']
+    tags: ['svelte', 'typescript', 'backend'],
   },
   {
     id: nanoid(),
@@ -33,7 +33,7 @@ export const WORK_ITEMS = [
     description: 'Incredibly powerful cookie consent plugin for Webflow.',
     href: 'https://www.finsweet.com/cookie-consent/',
     image: 'images/work/cookie-consent.webp',
-    tags: ['typescript', 'webflow']
+    tags: ['typescript', 'webflow'],
   },
   {
     id: nanoid(),
@@ -41,7 +41,7 @@ export const WORK_ITEMS = [
     description: 'Taking Webflow to the next level.',
     href: 'https://www.finsweet.website/',
     image: 'images/work/enterprise-sales-demo.webp',
-    tags: ['typescript', 'webflow', 'backend']
+    tags: ['typescript', 'webflow', 'backend'],
   },
   {
     id: nanoid(),
@@ -49,6 +49,6 @@ export const WORK_ITEMS = [
     description: 'Multi steps & conditional logic for Webflow.',
     href: 'https://advanced-forms.webflow.io/',
     image: 'images/work/advanced-webflow-forms.webp',
-    tags: ['svelte', 'typescript', 'webflow']
-  }
+    tags: ['svelte', 'typescript', 'webflow'],
+  },
 ];

@@ -4,8 +4,8 @@
   import { quartOut } from 'svelte/easing';
   import { fade } from 'svelte/transition';
 
-  import WritingItem from './WritingItem.svelte';
   import { active_writing_filter_tag } from './stores';
+  import WritingItem from './WritingItem.svelte';
 
   type Item = Omit<ComponentProps<WritingItem>, 'highlighted'> & { tags: string[] };
 

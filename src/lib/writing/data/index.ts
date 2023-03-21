@@ -1,11 +1,11 @@
-export type Author = typeof AUTHORS[keyof typeof AUTHORS];
+export type Author = (typeof AUTHORS)[keyof typeof AUTHORS];
 
 export const AUTHORS = {
   alex: {
     name: 'Alex Iglesias',
     img: '/images/authors/alex.webp',
-    twitter: 'alexiglesias_me'
-  }
+    twitter: 'alexiglesias_me',
+  },
 };
 
 export interface WritingMetaData {

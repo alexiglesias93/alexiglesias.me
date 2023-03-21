@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { send, receive } from '$lib/transitions/item-crossfade';
+  import { receive, send } from '$lib/transitions/item-crossfade';
 
   import type { WorkItemData } from './data';
 

@@ -25,8 +25,8 @@
     sameAs: [
       'https://twitter.com/alexiglesias_me',
       'https://www.linkedin.com/in/alexiglesias93/',
-      'http://github.com/alexiglesias93'
-    ]
+      'http://github.com/alexiglesias93',
+    ],
   }}
 />
 
