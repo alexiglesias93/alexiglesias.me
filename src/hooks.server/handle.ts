@@ -23,16 +23,23 @@ const minification_options = {
 };
 
 export const handle: Handle = async ({ event, resolve }) => {
-  const response = await resolve(event);
+  let page = '';
 
-  const { status, headers } = response;
+  return resolve(event, {
+    /**
+     * Minify HTML.
+     */
+    transformPageChunk: ({ html, done }) => {
+      page += html;
 
-  if (building && headers.get('content-type') === 'text/html') {
-    const markup = await response.text();
-    const minified = minify(markup, minification_options);
+      if (done) {
+        return building ? minify(page, minification_options) : page;
+      }
+    },
 
-    return new Response(minified, { status, headers });
-  }
-
-  return response;
+    /**
+     * Preload fonts.
+     */
+    preload: ({ type, path }) => type === 'font' && path.includes('.woff2'),
+  });
 };
